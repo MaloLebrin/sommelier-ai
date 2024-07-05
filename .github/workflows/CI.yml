@@ -1,0 +1,79 @@
+name: 🛠 Tests-CI
+
+on:
+  pull_request:
+
+env:
+  NODE_ENV: test
+  TZ: UTC
+  PORT: 3333
+  HOST: localhost
+  LOG_LEVEL: info
+  APP_KEY: stringdefaultstringdefault
+  SESSION_DRIVER: cookie
+  DB_HOST: 127.0.0.1
+  DB_PORT: 5432
+  DB_USER: root
+  DB_PASSWORD: root
+  DB_DATABASE: postgres
+
+jobs:
+  StyleGuides_checks:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        node: [20.x]
+        os: [ubuntu-latest]
+      fail-fast: false
+
+    steps:
+      - name: ⬇️ Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+
+      - name: ⚙️ Set node ${{ matrix.node }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node }}
+          cache: pnpm
+
+      - name: 🔧 Install
+        run: pnpm install --no-frozen-lockfile
+
+      - name: 📖 Lint
+        run: pnpm run lint
+
+      - name: ☑️ Type checking
+        run: pnpm run typecheck
+
+      - name: ✅ Tests
+        run: pnpm run test
+
+  Build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        node: [20.x]
+        os: [ubuntu-latest]
+      fail-fast: false
+
+    steps:
+      - name: ⬇️ Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+
+      - name: ⚙️ Set node ${{ matrix.node }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node }}
+          cache: pnpm
+
+      - name: 🔧 Install
+        run: pnpm install --no-frozen-lockfile
+
+      - name: 🏗 Build
+        run: pnpm run build
