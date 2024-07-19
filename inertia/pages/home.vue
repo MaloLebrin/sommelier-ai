@@ -1,23 +1,13 @@
 <script setup lang="ts">
 import ChatContainer from '../components/Chat/ChatContainer.vue'
-const state = {
-  conversationId: 1,
-}
-
-const userId = 1
+import ChatBox from '../components/Chat/ChatBox.vue'
 </script>
 
 <template>
-<div class="flex flex-col w-full mx-auto">
-  <ChatContainer>
-    <p class="text-white ">ezlherh</p>
-    <!-- <ChatBox />
-    <template v-if="state.conversationId">
-      <ChatForm
-        :conversation-id="state.conversationId"
-        :user-id="userId"
-      />
-    </template> -->
-  </ChatContainer>
-</div>
+  <div class="flex flex-col w-full mx-auto">
+    <ChatContainer>
+      <ChatBox />
+      <!-- <ChatForm /> -->
+    </ChatContainer>
+  </div>
 </template>
