@@ -1,18 +1,23 @@
 <script setup lang="ts">
-import { Head } from '@inertiajs/vue3'
+import ChatContainer from '../components/Chat/ChatContainer.vue'
+const state = {
+  conversationId: 1,
+}
 
-defineProps<{ version: number }>()
+const userId = 1
 </script>
 
 <template>
-  <Head title="Homepage" />
-
-  <div class="container">
-    <div class="title">AdonisJS {{ version }} x Inertia x Vue.js</div>
-
-    <span>
-      Learn more about AdonisJS and Inertia.js by visiting the
-      <a href="https://docs.adonisjs.com/guides/inertia">AdonisJS documentation</a>.
-    </span>
-  </div>
+<div class="flex flex-col w-full mx-auto">
+  <ChatContainer>
+    <p class="text-white ">ezlherh</p>
+    <!-- <ChatBox />
+    <template v-if="state.conversationId">
+      <ChatForm
+        :conversation-id="state.conversationId"
+        :user-id="userId"
+      />
+    </template> -->
+  </ChatContainer>
+</div>
 </template>
