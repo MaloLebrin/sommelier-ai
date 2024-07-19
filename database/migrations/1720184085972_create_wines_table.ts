@@ -1,4 +1,4 @@
-import { colorsWine } from '#wine/types/color'
+import { colorsWine } from '#wine/utils/color'
 import { BaseSchema } from '@adonisjs/lucid/schema'
 
 export default class extends BaseSchema {
@@ -13,15 +13,17 @@ export default class extends BaseSchema {
         table.timestamp('updated_at')
 
         table.string('name').notNullable()
+        table.string('commercial_name').nullable()
+        table.integer('year').notNullable()
         table.text('description').notNullable()
         table.integer('points').notNullable()
-        table.integer('price')
+        table.integer('price').nullable()
         table.string('variety')
         table.string('winery')
         table.string('region')
-        table.string('region2')
+        table.string('region2').nullable()
         table.string('country')
-        table.string('province')
+        table.string('province').nullable()
 
         table
           .enu('color', colorsWine, {

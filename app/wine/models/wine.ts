@@ -18,13 +18,19 @@ export default class Wine extends BaseModel {
   declare name: string
 
   @column()
+  declare commercialName: string | null
+
+  @column()
+  declare year: number
+
+  @column()
   declare description: string
 
   @column()
   declare points: number
 
   @column()
-  declare price: number
+  declare price: number | null
 
   @column()
   declare variety: string
@@ -36,7 +42,7 @@ export default class Wine extends BaseModel {
   declare region: string
 
   @column()
-  declare region2: string
+  declare region2: string | null
 
   @column()
   declare country: string
