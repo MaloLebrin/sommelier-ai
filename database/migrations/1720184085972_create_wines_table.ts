@@ -1,3 +1,4 @@
+import { colorsWine } from '#wine/types/color'
 import { BaseSchema } from '@adonisjs/lucid/schema'
 
 export default class extends BaseSchema {
@@ -21,6 +22,14 @@ export default class extends BaseSchema {
         table.string('region2')
         table.string('country')
         table.string('province')
+
+        table
+          .enu('color', colorsWine, {
+            useNative: true,
+            enumName: 'wine_color_enum',
+            existingType: false,
+          })
+          .notNullable()
       })
     }
   }
