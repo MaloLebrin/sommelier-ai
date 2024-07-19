@@ -28,7 +28,7 @@ export default class extends BaseSchema {
         table
           .enu('color', colorsWine, {
             useNative: true,
-            enumName: 'wine_color',
+            enumName: 'wine_colors',
             existingType: false,
           })
           .notNullable()
@@ -39,7 +39,7 @@ export default class extends BaseSchema {
   async down() {
     const hasTable = await this.schema.hasTable(this.tableName)
     if (hasTable) {
-      this.schema.raw('DROP TYPE IF EXISTS "wine_color"')
+      this.schema.raw('DROP TYPE IF EXISTS "wine_colors"')
       this.schema.dropTable(this.tableName)
     }
   }

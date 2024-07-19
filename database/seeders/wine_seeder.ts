@@ -23,7 +23,7 @@ interface DataItem {
 
 export default class extends BaseSeeder {
   async run() {
-    const dataToUse = Object.values(data)[0]
+    const dataToUse = Object.values(data)[0].slice(60000, 90000)
     if (!dataToUse || !dataToUse.length) {
       console.warn('No data found')
       return
@@ -35,6 +35,13 @@ export default class extends BaseSeeder {
       ({ title, designation }) =>
         title !== null && designation !== null && title !== undefined && designation !== undefined
     )
+
+    function formatString(str: string) {
+      if (!str) {
+        return null
+      }
+      return str.trim().toLowerCase()
+    }
 
     const dataToSet = cleanData
       .map(
@@ -52,18 +59,18 @@ export default class extends BaseSeeder {
           province,
         }) => ({
           points: Number.parseInt(points),
-          name: designation || title,
-          commercialName: title || null,
+          name: formatString(designation || title),
+          commercialName: formatString(title) || null,
           description,
           year: extractYearFromTitle(title),
           price: price ? Number.parseFloat(price) : null,
-          variety,
+          variety: formatString(variety),
           color: detectColorFromVariety(variety) || 'red',
-          winery: winery || null,
-          region: region_1,
-          region2: region_2 || null,
-          country,
-          province,
+          winery: formatString(winery) || null,
+          region: formatString(region_1),
+          region2: formatString(region_2) || null,
+          country: formatString(country),
+          province: formatString(province),
         })
       )
       .filter((item) => item.name && item.points && item.year && item.description && item.variety)
