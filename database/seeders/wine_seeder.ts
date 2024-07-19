@@ -68,13 +68,22 @@ export default class extends BaseSeeder {
       )
       .filter((item) => item.name && item.points && item.year && item.description && item.variety)
     await Wine.updateOrCreateMany('name', dataToSet)
+    const tastersDataSet = []
 
-    const tastersDataSet = winesDataSet
-      .filter(({ taster_name, taster_twitter_handle }) => taster_name && taster_twitter_handle)
-      .map(({ taster_name, taster_twitter_handle }) => ({
-        name: taster_name,
-        twitter: taster_twitter_handle,
-      }))
+    const test = [
+      ...new Set(
+        winesDataSet
+          .filter(({ taster_name, taster_twitter_handle }) => taster_name && taster_twitter_handle)
+          .forEach(({ taster_name, taster_twitter_handle }) => {
+            if (!tastersDataSet.find((taster) => taster.name === taster_name)) {
+              tastersDataSet.push({
+                name: taster_name,
+                twitter: taster_twitter_handle,
+              })
+            }
+          })
+      ),
+    ]
     await Taster.updateOrCreateMany('name', tastersDataSet)
   }
 }
