@@ -19,7 +19,7 @@ export default class extends BaseSchema {
         table.integer('points').notNullable()
         table.integer('price').nullable()
         table.string('variety')
-        table.string('winery')
+        table.string('winery').nullable()
         table.string('region')
         table.string('region2').nullable()
         table.string('country')

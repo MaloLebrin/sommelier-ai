@@ -1,4 +1,6 @@
-export const ColorsWineMap = new Map<ColorsWineEnum, string>([
+import { ColorsWineEnum } from '#wine/types/color'
+
+export const ColorsWineMap = new Map<ColorsWineEnum, ColorsWineEnum>([
   ['red', 'red'],
   ['white', 'white'],
   ['rose', 'rose'],
@@ -6,9 +8,9 @@ export const ColorsWineMap = new Map<ColorsWineEnum, string>([
 
 export const colorsWine = [...ColorsWineMap.keys()]
 
-export function detectColorFromVariety(variety: string): ColorsWineEnum {
+export function detectColorFromVariety(variety: string): ColorsWineEnum | undefined {
   if (!variety) {
-    return
+    return ColorsWineMap.get('red')
   }
   const varietyLower = variety.toLowerCase().trim()
   switch (true) {
@@ -18,5 +20,8 @@ export function detectColorFromVariety(variety: string): ColorsWineEnum {
       return ColorsWineMap.get('white')
     case varietyLower.includes('rose'):
       return ColorsWineMap.get('rose')
+
+    default:
+      return ColorsWineMap.get('red')
   }
 }

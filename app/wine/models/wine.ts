@@ -36,7 +36,7 @@ export default class Wine extends BaseModel {
   declare variety: string
 
   @column()
-  declare winery: string
+  declare winery: string | null
 
   @column()
   declare region: string
@@ -48,11 +48,11 @@ export default class Wine extends BaseModel {
   declare country: string
 
   @column()
-  declare province: string
+  declare province: string | null
 
   @column()
   declare color: ColorsWineEnum
 
   @hasMany(() => Taster)
-  declare posts: HasMany<typeof Taster>
+  declare tasters: HasMany<typeof Taster>
 }
