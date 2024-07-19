@@ -1,5 +1,5 @@
 import { BaseSeeder } from '@adonisjs/lucid/seeders'
-import data from '../fixtures/winemag-data-130k-v2.json'
+import * as data from '../fixtures/winemag-data-130k-v2.json' assert { type: 'json' }
 import Wine from '#wine/models/wine'
 import { extractYearFromTitle } from '#wine/utils/title'
 import { detectColorFromVariety } from '#wine/utils/color'
@@ -23,16 +23,21 @@ interface DataItem {
 
 export default class extends BaseSeeder {
   async run() {
-    if (!data || !data.length) {
+    const dataToUse = Object.values(data)[0]
+    if (!dataToUse || !dataToUse.length) {
       console.warn('No data found')
       return
     }
 
-    const winesDataSet = data as DataItem[]
+    const winesDataSet = dataToUse as DataItem[]
 
-    await Wine.updateOrCreateMany(
-      'name',
-      winesDataSet.map(
+    const cleanData = winesDataSet.filter(
+      ({ title, designation }) =>
+        title !== null && designation !== null && title !== undefined && designation !== undefined
+    )
+
+    const dataToSet = cleanData
+      .map(
         ({
           points,
           title,
@@ -47,7 +52,7 @@ export default class extends BaseSeeder {
           province,
         }) => ({
           points: Number.parseInt(points),
-          title: designation,
+          name: designation || title,
           commercialName: title || null,
           description,
           year: extractYearFromTitle(title),
@@ -61,12 +66,15 @@ export default class extends BaseSeeder {
           province,
         })
       )
-    )
+      .filter((item) => item.name && item.points && item.year && item.description && item.variety)
+    await Wine.updateOrCreateMany('name', dataToSet)
 
-    const tastersDataSet = winesDataSet.map(({ taster_name, taster_twitter_handle }) => ({
-      name: taster_name,
-      twitter: taster_twitter_handle,
-    }))
+    const tastersDataSet = winesDataSet
+      .filter(({ taster_name, taster_twitter_handle }) => taster_name && taster_twitter_handle)
+      .map(({ taster_name, taster_twitter_handle }) => ({
+        name: taster_name,
+        twitter: taster_twitter_handle,
+      }))
     await Taster.updateOrCreateMany('name', tastersDataSet)
   }
 }
