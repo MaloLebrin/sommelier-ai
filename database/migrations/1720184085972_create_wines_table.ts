@@ -21,9 +21,6 @@ export default class extends BaseSchema {
         table.string('region2')
         table.string('country')
         table.string('province')
-
-        table.string('taster_name')
-        table.string('taster_twitter')
       })
     }
   }
