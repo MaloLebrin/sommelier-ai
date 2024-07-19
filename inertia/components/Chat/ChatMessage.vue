@@ -41,7 +41,6 @@
 <script setup lang="ts">
 import ChatAuthorName from './ChatAuthorName.vue'
 import ChatAuthorImage from './ChatAuthorImage.vue'
-import { defineProps } from 'vue'
 
 defineProps({
   author: {
