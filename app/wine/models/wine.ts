@@ -1,8 +1,7 @@
 import { DateTime } from 'luxon'
 import { BaseModel, column, hasMany } from '@adonisjs/lucid/orm'
 import Taster from '#taster/models/taster'
-import { HasMany } from '@adonisjs/lucid/types/relations'
-import { ColorsWineEnum } from '#wine/types/color'
+import type { HasMany } from '@adonisjs/lucid/types/relations'
 
 export default class Wine extends BaseModel {
   @column({ isPrimary: true })
@@ -51,7 +50,7 @@ export default class Wine extends BaseModel {
   declare province: string | null
 
   @column()
-  declare color: ColorsWineEnum
+  declare color: 'red' | 'white' | 'rose'
 
   @hasMany(() => Taster)
   declare tasters: HasMany<typeof Taster>

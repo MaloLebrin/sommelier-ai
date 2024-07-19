@@ -1,4 +1,4 @@
-import { ColorsWineEnum } from '#wine/types/color'
+import type { ColorsWineEnum } from '../types/color'
 
 export const ColorsWineMap = new Map<ColorsWineEnum, ColorsWineEnum>([
   ['red', 'red'],

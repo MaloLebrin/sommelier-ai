@@ -4,10 +4,11 @@ services:
     ports:
       - 5432:5432
     volumes:
-      - psql-data:/var/lib/postgresql/data
+      - sommelier-db:/var/lib/postgresql/data
     environment:
       - POSTGRES_USER=root
       - POSTGRES_PASSWORD=root
+      - POSTGRES_DB=sommelier-db
 
 volumes:
-  psql-data:
+  sommelier-db:
