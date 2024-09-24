@@ -1,5 +1,5 @@
 import { BaseSeeder } from '@adonisjs/lucid/seeders'
-import * as JSON from '../fixtures/winemag-data-130k-v2.json' assert { type: 'json' }
+import { dataset } from '../fixtures/wineDataSet.js'
 import Wine from '#wine/models/wine'
 import { extractYearFromTitle } from '#wine/utils/title'
 import { detectColorFromVariety } from '#wine/utils/color'
@@ -23,7 +23,7 @@ interface DataItem {
 
 export default class extends BaseSeeder {
   async run() {
-    const data = JSON as DataItem[][]
+    const data = dataset as DataItem[][]
     const dataToUse = Object.values(data)[0].slice(60000, 90000)
     if (!dataToUse || !dataToUse.length) {
       console.warn('No data found')
