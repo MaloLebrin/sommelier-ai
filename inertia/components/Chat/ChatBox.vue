@@ -37,13 +37,14 @@
     />
   </template> -->
   <ChatLoadingMessage :is-loading="state.isLoading" />
-  <!-- <DonateMessage /> -->
+  <DonateMessage />
 </div>
 </template>
 
 <script setup lang="ts">
 import ChatMessage from './ChatMessage.vue'
 import ChatLoadingMessage from './ChatLoadingMessage.vue'
+import DonateMessage from '../Donate/DonateMessage.vue'
 // import { useScroll } from '@vueuse/core'
 // import { ArrowDownCircleIcon } from '@heroicons/vue/24/solid'
 import { ref } from 'vue';
