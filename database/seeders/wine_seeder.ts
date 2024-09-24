@@ -1,5 +1,5 @@
 import { BaseSeeder } from '@adonisjs/lucid/seeders'
-import { dataset } from '../fixtures/wineDataSet.js'
+import { dataset } from '#database/fixtures/wineDataSet'
 import Wine from '#wine/models/wine'
 import { extractYearFromTitle } from '#wine/utils/title'
 import { detectColorFromVariety } from '#wine/utils/color'
