@@ -8,5 +8,6 @@
 */
 
 import router from '@adonisjs/core/services/router'
-router.on('/').renderInertia('home', { version: 6 })
+const HomeController = () => import('../app/pages/controllers/home_controller.js')
 
+router.get('/', [HomeController, 'render']).as('pages.home')
