@@ -1,4 +1,4 @@
-import type { ColorsWineEnum } from '../types/color'
+import type { ColorsWineEnum } from '../types/color.ts'
 
 export const ColorsWineMap = new Map<ColorsWineEnum, ColorsWineEnum>([
   ['red', 'red'],

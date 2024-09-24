@@ -27,7 +27,7 @@
       :is-first="false"
     />
   </template>
-  <template v-else>
+  <!-- <template v-else>
     <ChatMessage
       v-for="(message, index) in state.conversation?.queries"
       :key="message.id"
@@ -35,7 +35,7 @@
       :text="message.query"
       :is-first="index === 0"
     />
-  </template>
+  </template> -->
   <ChatLoadingMessage :is-loading="state.isLoading" />
   <!-- <DonateMessage /> -->
 </div>
@@ -53,7 +53,7 @@ const state = {
     queries: [],
   },
 }
-const bottom = ref(false)
+// const bottom = ref(false)
 // const { state } = useConversation()
 // const { t } = useI18n()
 
