@@ -1,9 +1,8 @@
 import type { HttpContext } from '@adonisjs/core/http'
 
 export default class HomeController {
-  render = async (ctx: HttpContext) => {
-    console.log(ctx, '<==== ctx')
-    const { inertia } = ctx
-    return inertia.render('home', { version: 6 })
+  render = async ({ inertia, session }: HttpContext) => {
+    console.log(session.config, '<==== session')
+    return inertia.render('home')
   }
 }
