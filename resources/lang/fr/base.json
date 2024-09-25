@@ -1,5 +1,17 @@
 {
   "donate": {
     "button": "Donner"
+  },
+  "menu": {
+    "about": "À propos",
+    "home": "Chat"
+  },
+  "base": {
+    "getStarted": "Commencer",
+    "scrollToBottom": "Descendre en bas du chat"
+  },
+  "message": {
+    "defaultTextAI": "Bonjour, je suis Sommelier GPT",
+    "askMeForWine": "Pour quel type de plat cherchez vous du vin ?"
   }
 }
