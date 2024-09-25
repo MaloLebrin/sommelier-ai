@@ -1,0 +1,14 @@
+services:
+  database:
+    image: postgres:16-alpine3.19
+    ports:
+      - 5432:5432
+    volumes:
+      - sommelier-db:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=root
+      - POSTGRES_DB=sommelier-db
+
+volumes:
+  sommelier-db:
