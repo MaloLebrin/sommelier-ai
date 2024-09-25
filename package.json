@@ -45,6 +45,7 @@
     "@types/luxon": "^3.4.2",
     "@types/node": "^20.16.6",
     "@vitejs/plugin-vue": "^5.1.4",
+    "@vueuse/core": "^11.1.0",
     "autoprefixer": "^10.4.20",
     "eslint": "^8.57.1",
     "hot-hook": "^0.2.6",
