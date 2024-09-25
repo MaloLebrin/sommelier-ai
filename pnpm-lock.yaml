@@ -35,9 +35,15 @@ importers:
       '@adonisjs/vite':
         specifier: ^3.0.0
         version: 3.0.0(@adonisjs/core@6.14.0(@adonisjs/assembler@7.8.2(typescript@5.6.2))(@vinejs/vine@2.1.0)(edge.js@6.2.0))(@adonisjs/shield@8.1.1(@adonisjs/core@6.14.0(@adonisjs/assembler@7.8.2(typescript@5.6.2))(@vinejs/vine@2.1.0)(edge.js@6.2.0))(@adonisjs/i18n@2.1.1(@adonisjs/core@6.14.0(@adonisjs/assembler@7.8.2(typescript@5.6.2))(@vinejs/vine@2.1.0)(edge.js@6.2.0))(@vinejs/vine@2.1.0)(edge.js@6.2.0))(@adonisjs/session@7.4.2(@adonisjs/core@6.14.0(@adonisjs/assembler@7.8.2(typescript@5.6.2))(@vinejs/vine@2.1.0)(edge.js@6.2.0))(edge.js@6.2.0))(edge.js@6.2.0))(edge.js@6.2.0)(vite@5.4.8(@types/node@22.7.0))
+      '@iconify-json/heroicons':
+        specifier: ^1.2.0
+        version: 1.2.0
       '@vinejs/vine':
         specifier: ^2.1.0
         version: 2.1.0
+      edge-iconify:
+        specifier: ^2.0.1
+        version: 2.0.1(edge.js@6.2.0)
       edge.js:
         specifier: ^6.2.0
         version: 6.2.0
@@ -609,6 +615,16 @@ packages:
   '@humanwhocodes/retry@0.3.0':
     resolution: {integrity: sha512-d2CGZR2o7fS6sWB7DG/3a95bGKQyHMACZ5aW8qGkkqQpUoZV6C0X7Pc7l4ZNMZkfNBf4VWNe9E1jRsf0G146Ew==}
     engines: {node: '>=18.18'}
+
+  '@iconify-json/heroicons@1.2.0':
+    resolution: {integrity: sha512-EmvGN0L9EUJCmQ82rkLGZ4tkz0YGQfZV7ugKT6UvHni/bxNitQrD0gLj6NJj2W9zsSoXyNHyCX236+EJmO4pmA==}
+
+  '@iconify/iconify@3.1.1':
+    resolution: {integrity: sha512-1nemfyD/OJzh9ALepH7YfuuP8BdEB24Skhd8DXWh0hzcOxImbb1ZizSZkpCzAwSZSGcJFmscIBaBQu+yLyWaxQ==}
+    deprecated: no longer maintained, switch to modern iconify-icon web component
+
+  '@iconify/types@2.0.0':
+    resolution: {integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==}
 
   '@isaacs/cliui@8.0.2':
     resolution: {integrity: sha512-O8jcjabXaleOG9DQ0+ARXWZBTfnP4WNAqzuiJK7ll44AmxGKv/J2M4TPjxjY3znBCfvBXFzucm1twdyFybFqEA==}
@@ -1578,6 +1594,12 @@ packages:
   edge-error@4.0.1:
     resolution: {integrity: sha512-z5mNO97k8hRVpJ6Ew1qbkMTfQ44CwuWnl+ShMCrEFgD+b324CnjBS6HbiR+Wh6Wcmw9C+/XsFBHzZ+376PpD/w==}
     engines: {node: '>=18.16.0'}
+
+  edge-iconify@2.0.1:
+    resolution: {integrity: sha512-VRWeiz4qnm/dlcGQuMd/olTTfCHHCRleW6kcy0EdXZE8hreXDx01I55f/yzYezePGsWwBuKirFVzwnrz4qMo0g==}
+    engines: {node: '>=18.16.0'}
+    peerDependencies:
+      edge.js: ^6.0.0
 
   edge-lexer@6.0.2:
     resolution: {integrity: sha512-C30wqcw66JwpepLnsTqTp0P4JqKa2xEbAfNj3dPOvBYq4zybiYuhlpSzExvNUeoAAnbjgozgVTVAQ38HctyV4g==}
@@ -4074,6 +4096,16 @@ snapshots:
 
   '@humanwhocodes/retry@0.3.0': {}
 
+  '@iconify-json/heroicons@1.2.0':
+    dependencies:
+      '@iconify/types': 2.0.0
+
+  '@iconify/iconify@3.1.1':
+    dependencies:
+      '@iconify/types': 2.0.0
+
+  '@iconify/types@2.0.0': {}
+
   '@isaacs/cliui@8.0.2':
     dependencies:
       string-width: 5.1.2
@@ -5014,6 +5046,11 @@ snapshots:
   eastasianwidth@0.2.0: {}
 
   edge-error@4.0.1: {}
+
+  edge-iconify@2.0.1(edge.js@6.2.0):
+    dependencies:
+      '@iconify/iconify': 3.1.1
+      edge.js: 6.2.0
 
   edge-lexer@6.0.2:
     dependencies:

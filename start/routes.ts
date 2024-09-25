@@ -9,6 +9,6 @@
 
 import router from '@adonisjs/core/services/router'
 
-import HomeController from '#pages/controllers/home_controller'
+const HomeController = () => import('#pages/controllers/home_controller')
 
 router.get('/', [HomeController, 'render']).as('pages.home')

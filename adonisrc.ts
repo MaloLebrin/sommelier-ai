@@ -35,7 +35,7 @@ export default defineConfig({
     () => import('@adonisjs/shield/shield_provider'),
     () => import('@adonisjs/static/static_provider'),
     () => import('@adonisjs/lucid/database_provider'),
-    () => import('@adonisjs/i18n/i18n_provider')
+    () => import('@adonisjs/i18n/i18n_provider'),
   ],
 
   /*
@@ -49,11 +49,7 @@ export default defineConfig({
   preloads: [
     () => import('#start/routes'),
     () => import('#start/kernel'),
-    {
-      file: () => import('#start/view'),
-      environment: ['web'],
-    },
-
+    () => import('#start/view'),
   ],
 
   /*
@@ -93,7 +89,7 @@ export default defineConfig({
     {
       pattern: 'resources/lang/**/*.{json,yaml,yml}',
       reloadServer: false,
-    }
+    },
   ],
 
   assetsBundler: false,
