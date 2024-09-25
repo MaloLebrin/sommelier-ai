@@ -1,8 +1,9 @@
 {
   "extends": "@adonisjs/tsconfig/tsconfig.app.json",
+  "exclude": ["node_modules", "./resources/ts/env.d.ts"],
   "compilerOptions": {
     "rootDir": "./",
-    "outDir": "./build"
-  },
-  "exclude": ["./inertia/**/*", "node_modules", "build"]
+    "outDir": "./build",
+    "types": ["hot-hook/import-meta"],
+  }
 }

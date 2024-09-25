@@ -1,7 +1,7 @@
-import type { HttpContext } from '@adonisjs/core/http'
+import type { HttpContext } from "@adonisjs/core/http";
 
 export default class HomeController {
-  render = async ({ inertia }: HttpContext) => {
-    return inertia.render('home')
+  async render ({ view }: HttpContext) {
+    return view.render('pages/home')
   }
 }
