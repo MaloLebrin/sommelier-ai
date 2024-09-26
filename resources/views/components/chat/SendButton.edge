@@ -1,14 +1,8 @@
 <button
   type="{{ type || 'submit' }}"
-  disabled="{{ isLoading || disabled }}"
+  disabled="{{ isLoading || disabled || false }}"
   class="absolute top-[19px] right-5 group hover:cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
-  title="{{ title || $t('form.validation.send') }}"
+  title="{{ title || t('form.validation.send') }}"
 >
-  {{-- <OutlineArrow --}}
-    {{-- class="w-[35px] h-[35px] text-blue-500 group-hover:hidden {{ isLoading ? 'animate-spin' : '' }}" --}}
-  {{-- /> --}}
-  {{-- <SolidArrow --}}
-    {{-- class="w-[35px] h-[35px] text-blue-500 hidden group-hover:block {{ isLoading ? 'animate-spin' : '' }}"}}" --}}
-  {{-- />+ --}}
-  <span class="capitalize sr-only">{{ $t('form.validation.send') }}</span>
+  <span class="capitalize">{{ t('form.validation.send') }}</span>
 </button>
