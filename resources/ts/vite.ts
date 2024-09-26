@@ -1,2 +1,2 @@
-import.meta.glob(['../../fonts/**'])
-import.meta.glob(['../../images/**'])
+import.meta.glob(['./fonts/**'])
+import.meta.glob(['./images/**'])
