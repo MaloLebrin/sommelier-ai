@@ -1,6 +1,7 @@
 {
   "donate": {
-    "button": "Donate"
+    "button": "Donate",
+    "supportUS": "'You can support our work by making a donation'"
   },
   "menu": {
     "about": "About",

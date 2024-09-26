@@ -1,13 +1,14 @@
 {
   "donate": {
-    "button": "Donner"
+    "button": "Donner",
+    "supportUS": "Vous pouvez soutenir notre travail en faisant une donation"
   },
   "menu": {
     "about": "À propos",
     "home": "Chat"
   },
   "message": {
-    "defaultTextAI": "Bonjour, je suis Sommelier GPT",
+    "defaultTextAI": "Bonjour, je suis Sommelier AI",
     "askMeForWine": "Pour quel type de plat cherchez vous du vin ?"
   },
   "behavior": {
