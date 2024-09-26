@@ -1,0 +1,14 @@
+{
+  "sentenceLabel": "What type of wine are you looking for?",
+  "errors": {
+    "emptystring": "This field is required"
+  },
+  "validation": {
+    "save": "save",
+    "search": "research",
+    "send": "send"
+  },
+  "placeholder": {
+    "textarea": "Say something..."
+  }
+}
