@@ -1,0 +1,53 @@
+{
+
+  "title": "Découvrez le Vin Parfait: Votre Outil Ultime de Recherche de Vins",
+  "subtitle": "Bienvenue dans le futur de l'accord mets et vins ! Nous vous présentons notre outil de recherche de vins novateur qui combine l'art de la gastronomie avec la puissance de ChatGPT, vous permettant de trouver le vin idéal pour compléter n'importe quel plat. Que vous soyez un sommelier chevronné ou que vous débutiez votre voyage dans le monde du vin, notre plateforme rehaussera votre expérience culinaire à de nouveaux sommets.",
+  "whySommelierGPT": {
+    "title": "Pourquoi Sommelier GPT ?",
+    "description": "Trouver le vin parfait pour accompagner votre repas peut être une tâche intimidante, même pour les palais les plus avisés. C'est là qu'intervient Sommelier GPT. Notre plateforme élimine les conjectures de l'accord mets et vins en combinant les saveurs inhérentes des plats avec l'expertise de ChatGPT."
+  },
+  "howDoesItWork": {
+    "title":"Comment ça marche ?",
+    "steps": {
+      "1": {
+        "title": "Profilage des plats",
+        "description": "Notre système profile minutieusement les saveurs, les ingrédients et les techniques de cuisson de divers plats. Des cuisines classiques aux créations fusion innovantes, nous couvrons tout. Cette base de données exhaustive garantit des informations précises et détaillées sur le profil gustatif de chaque plat."
+      },
+      "2": {
+        "title": "Intelligence ChatGPT",
+        "description": "En tirant parti de la puissance de ChatGPT, notre plateforme engage une conversation avec vous, tout comme un sommelier compétent. Décrivez votre plat, partagez vos préférences et laissez l'expertise de ChatGPT vous guider vers la sélection de vin parfaite. Fini les listes de vins déconcertantes ou les terminologies confuses, ne place que des recommandations claires."
+      },
+      "3": {
+        "title": "Recommandations Personnalisées",
+        "description": "Nous comprenons que chaque palais est unique. Sommelier GPT adapte ses suggestions de vin à vos préférences gustatives, rendant l'expérience vraiment personnalisée. Que vous préfériez un rouge corsé, un blanc vif ou quelque chose de pétillant, notre outil saura vous satisfaire."
+      }
+    }
+  },
+  "features": {
+    "title": "Fonctionnalités Clés",
+    "1": {
+      "title": "Base de donnée étendue",
+      "description": "Notre plateforme propose une gamme diversifiée de plats du monde entier, garantissant que vous puissiez trouver des accords pour toutes les cuisines."
+    },
+    "2": {
+      "title": "Expertise de ChatGPT ",
+      "description": "Profitez de l'orientation de ChatGPT, qui a été formé sur une vaste gamme de connaissances culinaires et d'expertise en vin, en faisant ainsi le sommelier virtuel idéal."
+    },
+    "3": {
+      "title": "Interface Conviviale",
+      "description": "Notre interface intuitive facilite la navigation, que vous soyez un passionné de technologie ou un convive occasionnel."
+    },
+    "4": {
+      "title": "Éducation sur le Vin",
+      "description": "Apprenez les profils de vin, les régions et les variétés de raisin tout en explorant les recommandations, enrichissant ainsi votre compréhension du monde du vin."
+    },
+    "5": {
+      "title": "Engagement Communautaire",
+      "description": "Connectez-vous avec d'autres passionnés de cuisine et de vin, partagez vos expériences et découvrez de nouveaux accords grâce à notre plateforme communautaire interactive."
+    }
+  },
+  "cta": {
+    "title": "Améliorez Votre Expérience Culinaire",
+    "description": "Nous croyons que le vin parfait peut élever un repas de l'ordinaire à l'extraordinaire. En combinant la science des saveurs avec l'intelligence de ChatGPT, nous sommes là pour vous assurer que vous ne vous contenterez jamais de moins que l'accord mets et vins parfait. Embarquez pour un voyage de saveurs, d'arômes et de découvertes - commencez votre expérience avec Sommelier GPT dès aujourd'hui !"
+  }
+}

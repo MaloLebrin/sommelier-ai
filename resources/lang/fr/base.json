@@ -1,0 +1,20 @@
+{
+  "donate": {
+    "button": "Donner",
+    "supportUS": "Vous pouvez soutenir notre travail en faisant une donation"
+  },
+  "menu": {
+    "about": "À propos",
+    "home": "Chat"
+  },
+  "message": {
+    "defaultTextAI": "Bonjour, je suis Sommelier AI",
+    "askMeForWine": "Pour quel type de plat cherchez vous du vin ?"
+  },
+  "behavior": {
+    "loading": "Chargement...",
+    "error": "Une erreur est survenue. Veuillez réessayer plus tard.",
+    "getStarted": "Commencer",
+    "scrollToBottom": "Descendre en bas du chat"
+  }
+}

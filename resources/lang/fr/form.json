@@ -1,0 +1,14 @@
+{
+  "sentenceLabel": "Quel type de vin cherchez-vous ?",
+    "errors": {
+      "emptystring": "Ce champ est requis"
+    },
+    "validation": {
+      "save": "enregistrer",
+      "search": "rechercher",
+      "send": "envoyer"
+    },
+    "placeholder": {
+      "textarea": "Dites quelque chose..."
+    }
+}

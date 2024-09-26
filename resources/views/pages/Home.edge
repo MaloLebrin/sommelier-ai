@@ -1,0 +1,12 @@
+@layouts.app({ title: "🍇 Sommelier AI" })
+  @slot('meta')
+    <meta name="description" content="A Home page made with EdgeJS">
+  @endslot
+
+  <main class="flex flex-col w-full h-full mx-auto">
+    @component('components/chat/Container')
+      @!chat.box()
+      @!chat.form.form()
+    @end
+  </main>
+@end

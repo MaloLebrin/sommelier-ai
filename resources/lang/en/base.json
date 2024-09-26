@@ -1,0 +1,20 @@
+{
+  "donate": {
+    "button": "Donate",
+    "supportUS": "'You can support our work by making a donation'"
+  },
+  "menu": {
+    "about": "About",
+    "home": "Chat"
+  },
+  "message": {
+    "defaultTextAI": "Hello, I'm Sommelier Ai",
+    "askMeForWine": "What type of wine are you looking for ?"
+  },
+  "behavior": {
+    "loading": "Chargement...",
+    "error": "An error occurred. Please try again later.",
+    "getStarted": "Get Started",
+    "scrollToBottom": "Scroll to bottom"
+  }
+}

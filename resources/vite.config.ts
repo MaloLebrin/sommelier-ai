@@ -8,12 +8,12 @@ export default defineConfig({
        * Entrypoints of your application. Each entrypoint will
        * result in a separate bundle.
        */
-      entrypoints: ['resources/css/app.css', 'resources/ts/app.ts'],
+      entrypoints: ['resources/css/app.scss', 'resources/ts/app.ts'],
 
       /**
        * Paths to watch and reload the browser on file change
        */
-      reload: ['resources/views/**/*.edge'],
+      reload: ['resources/views/**/*.tsx'],
     }),
   ],
 })

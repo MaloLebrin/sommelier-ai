@@ -34,10 +34,8 @@ export default defineConfig({
     () => import('@adonisjs/vite/vite_provider'),
     () => import('@adonisjs/shield/shield_provider'),
     () => import('@adonisjs/static/static_provider'),
-    () => import('@adonisjs/cors/cors_provider'),
     () => import('@adonisjs/lucid/database_provider'),
-    () => import('@adonisjs/auth/auth_provider'),
-    () => import('@adonisjs/inertia/inertia_provider'),
+    () => import('@adonisjs/i18n/i18n_provider'),
   ],
 
   /*
@@ -48,7 +46,11 @@ export default defineConfig({
   | List of modules to import before starting the application.
   |
   */
-  preloads: [() => import('#start/routes'), () => import('#start/kernel')],
+  preloads: [
+    () => import('#start/routes'),
+    () => import('#start/kernel'),
+    () => import('#start/view'),
+  ],
 
   /*
   |--------------------------------------------------------------------------
@@ -75,15 +77,6 @@ export default defineConfig({
     forceExit: false,
   },
 
-  /*
-  |--------------------------------------------------------------------------
-  | Metafiles
-  |--------------------------------------------------------------------------
-  |
-  | A collection of files you want to copy to the build folder when creating
-  | the production build.
-  |
-  */
   metaFiles: [
     {
       pattern: 'resources/views/**/*.edge',
@@ -91,6 +84,10 @@ export default defineConfig({
     },
     {
       pattern: 'public/**',
+      reloadServer: false,
+    },
+    {
+      pattern: 'resources/lang/**/*.{json,yaml,yml}',
       reloadServer: false,
     },
   ],

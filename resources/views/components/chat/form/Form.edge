@@ -1,0 +1,18 @@
+<form method="post" class="py-2 relative w-full sm:max-w-[777px]">
+  <fieldset>
+    <label for="message" up-validate>
+      <span class="sr-only">{{ t('form.sentenceLabel') }}</span>
+    </label>
+    <textarea
+      id="message"
+      name="message"
+      required
+      spellcheck="true"
+      class="w-full px-6 py-4 bg-white border shadow-lg resize-none pr-14 bg-opacity-80 backdrop-blur rounded-3xl focus:outline-none focus:ring-2 focus:ring-opacity-50 disabled:cursor-not-allowed disabled:opacity-80"
+      placeholder="{{ placeholder || t('form.placeholder.textarea') }}"
+    ></textarea>
+    <div class="error">This field is required</div>
+  </fieldset>
+
+  @!chat.sendButton()
+</form>
