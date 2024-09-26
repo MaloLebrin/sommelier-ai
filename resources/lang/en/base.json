@@ -3,15 +3,17 @@
     "button": "Donate"
   },
   "menu": {
-    "about": "À propos",
+    "about": "About",
     "home": "Chat"
   },
-  "base": {
-    "getStarted": "Commencer",
-    "scrollToBottom": "Descendre en bas du chat"
-  },
   "message": {
-    "defaultTextAI": "Bonjour, je suis Sommelier GPT",
-    "askMeForWine": "Pour quel type de plat cherchez vous du vin ?"
+    "defaultTextAI": "Hello, I'm Sommelier Ai",
+    "askMeForWine": "What type of wine are you looking for ?"
+  },
+  "behavior": {
+    "loading": "Chargement...",
+    "error": "An error occurred. Please try again later.",
+    "getStarted": "Get Started",
+    "scrollToBottom": "Scroll to bottom"
   }
 }
