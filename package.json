@@ -79,7 +79,9 @@
   "hotHook": {
     "boundaries": [
       "./app/controllers/**/*.ts",
-      "./app/middleware/*.ts"
+      "./app/middleware/*.ts",
+      "./app/ressources/views/**/*.edge",
+      "./app/ressources/lang/**/*.ts"
     ]
   },
   "overrides": {
