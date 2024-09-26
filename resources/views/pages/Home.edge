@@ -3,6 +3,9 @@
     <meta name="description" content="A Home page made with EdgeJS">
   @endslot
 
-  <h1 class="text-red-500">Hello world</h1>
-  <button> {{ t('base.donate.button') }} </button>
+  <main class="flex flex-col w-full mx-auto">
+    @component('components/chat/Container')
+      <span> Login </span>
+    @end
+  </main>
 @end
