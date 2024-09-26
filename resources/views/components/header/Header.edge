@@ -8,18 +8,22 @@
       </p>
     </div>
     <div class="flex items-center gap-6">
-      <div v-if="$route.path !== '/about'">
+      <div>
         <a
           class="text-sm font-light hover:underline hover:cursor-pointer"
-          to="/about"
+          href="/about"
+          up-target=".main"
+          up-preload
         >
           {{ t('base.menu.about') }}
         </a>
       </div>
-      <div v-if="$route.path !== '/'">
+      <div>
         <a
           class="text-sm font-light hover:underline hover:cursor-pointer"
-          to="/"
+          href="/"
+          up-target=".main"
+          up-preload
         >
           {{ t('base.menu.home') }}
         </a>

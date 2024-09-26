@@ -1,5 +1,9 @@
-<main class="flex flex-col w-full h-full mx-auto">
-  @page.container() 
-    Donate
-  @end
-</main>
+@layouts.app({ title: "🍇 Sommelier AI - Donate" })
+  @slot('meta')
+    <meta name="description" content="A Home page made with EdgeJS">
+  @endslot
+
+  <main class="flex flex-col w-full h-full mx-auto main">
+      Donate
+  </main>
+@end
