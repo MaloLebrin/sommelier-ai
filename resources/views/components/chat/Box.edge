@@ -1,0 +1,49 @@
+<div
+  id="chatBox"
+  class="no-scroll-bar relative h-full w-full sm:max-h-[800px] sm:max-w-[777px] bg-white bg-opacity-50 backdrop-blur rounded-3xl overflow-y-scroll shadow-lg pt-4 px-6 pb-10 mt-4"
+>
+  @if(!arrivedState?.bottom)
+    <button
+      class="sticky inset-x-0 top-0 flex items-center w-auto gap-3 pr-5 mb-4 transition-all duration-200 ease-in-out bg-white border rounded-full shadow-xl group border-zinc-100"
+      :class="{
+    'opacity-0': bottom,
+    'opacity-100': !bottom,
+  }"
+    >
+      <span class="text-xs uppercase group-hover:text-blue-600 text-zinc-700">
+        {{ t('base.behavior.scrollToBottom') }}
+  </span>
+    </button>
+  @end
+  
+  @if(!messages || messages?.length === 0)
+    @chat.messages.message({
+      text: t('base.message.defaultTextAI'),
+      author: 0,
+      isFirst: false,
+    })
+    @end
+    
+    @chat.messages.message({
+      text: t('base.message.askMeForWine'),
+      author: 0,
+      isFirst: false,
+    })
+    @end
+  @else
+    @each((message, index) in messages)
+      @chat.messages.message({
+      text: message.content,
+      author: message.author,
+      isFirst: index === 0,
+      })
+      @end
+    @end
+  @end
+  @chat.messages.loading({
+    isLoading: false,
+  })
+  @end
+  @donate.message()
+  @end
+</div>
