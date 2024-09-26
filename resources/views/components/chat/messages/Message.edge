@@ -2,8 +2,7 @@
   class="flex flex-col w-full gap-3 mb-2 {{ !author ? 'justify-end items-start' : 'justify-start items-end' }} {{ isLast ? 'pb-4' : '' }}"
 >
   @if(author === 0 && isFirst)
-      @chat.author()
-      @end
+      @!chat.author()
   @end
 
   @if(author === 1 && isFirst)

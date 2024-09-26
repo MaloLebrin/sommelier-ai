@@ -17,33 +17,28 @@
   @end
   
   @if(!messages || messages?.length === 0)
-    @chat.messages.message({
+    @!chat.messages.message({
       text: t('base.message.defaultTextAI'),
       author: 0,
       isFirst: false,
     })
-    @end
     
-    @chat.messages.message({
+    @!chat.messages.message({
       text: t('base.message.askMeForWine'),
       author: 0,
       isFirst: false,
     })
-    @end
   @else
     @each((message, index) in messages)
-      @chat.messages.message({
+      @!chat.messages.message({
       text: message.content,
       author: message.author,
       isFirst: index === 0,
       })
-      @end
     @end
   @end
-  @chat.messages.loading({
+  @!chat.messages.loading({
     isLoading: false,
   })
-  @end
-  @donate.message()
-  @end
+  @!donate.message()
 </div>

@@ -1,13 +1,11 @@
-@layouts.app({ title: "Sommelier AI" })
+@layouts.app({ title: "🍇 Sommelier AI" })
   @slot('meta')
     <meta name="description" content="A Home page made with EdgeJS">
   @endslot
 
   <main class="flex flex-col w-full mx-auto">
     @component('components/chat/Container')
-      @chat.box() 
-        
-      @end
+      @!chat.box()
     @end
   </main>
 @end
