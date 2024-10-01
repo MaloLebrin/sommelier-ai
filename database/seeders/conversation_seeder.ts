@@ -9,17 +9,23 @@ export default class extends BaseSeeder {
       {
         email: 'harrypotter@poudlard.com',
         password: 'password',
-        fullName: 'Harry Potter',
+        firstName: 'Harry',
+        lastName: 'Potter',
       },
       {
         email: 'albusdumbledore@poudlard.com',
         password: 'password',
-        fullName: 'Albus Dumbledore',
+        firstName: 'Albus',
+        lastName: 'Dumbledore',
       },
     ])
 
     const conversation = await Conversation.create({})
-    const messages = await Message.createMany([
+    await Promise.all(users.map((user) => user.related('conversations').attach([conversation.id])))
+
+    const [harryPotter, albusDumbledore] = users
+
+    const [message1, message2] = await Message.createMany([
       {
         content: 'Hello Harry',
         status: 'sent',
@@ -30,10 +36,9 @@ export default class extends BaseSeeder {
       },
     ])
 
-    await Promise.all(
-      messages.map((message) => message.related('conversation').associate(conversation))
-    )
-
-    await Promise.all(users.map((user) => user.related('conversations').attach([conversation.id])))
+    await message1.related('conversation').associate(conversation)
+    await message2.related('conversation').associate(conversation)
+    await harryPotter.related('messages').save(message1)
+    await albusDumbledore.related('messages').save(message2)
   }
 }

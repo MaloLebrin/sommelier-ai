@@ -1,7 +1,6 @@
 import { DateTime } from 'luxon'
 import { BaseModel, belongsTo, column } from '@adonisjs/lucid/orm'
-import User from '#auth/models/user'
-import type { BelongsTo, HasOne } from '@adonisjs/lucid/types/relations'
+import type { BelongsTo } from '@adonisjs/lucid/types/relations'
 import Conversation from '#conversation/models/conversation'
 
 export default class Message extends BaseModel {
@@ -25,10 +24,11 @@ export default class Message extends BaseModel {
 
   // Relationships
   @column()
-  declare authorId: HasOne<typeof User>
+  declare conversationId: number
+  @column()
+  declare authorId: number
 
   @belongsTo(() => Conversation)
   declare conversation: BelongsTo<typeof Conversation>
-
   // Réactions, images
 }
