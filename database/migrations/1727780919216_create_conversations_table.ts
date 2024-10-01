@@ -13,6 +13,7 @@ export default class extends BaseSchema {
       table.timestamp('updated_at')
 
       // Relationships
+      table.integer('selected_wine_id').unsigned().references('wines.id').nullable()
     })
 
     await this.schema.createTable(this.pivotConversationUser, (table) => {
