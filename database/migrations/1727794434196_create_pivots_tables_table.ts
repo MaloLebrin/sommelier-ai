@@ -17,7 +17,7 @@ export default class extends BaseSchema {
   async down() {
     const hasTable = await this.schema.hasTable(this.pivotConversationUser)
     if (hasTable) {
-      await this.schema.dropTable(this.pivotConversationUser)
+      this.schema.dropTable(this.pivotConversationUser)
     }
   }
 }

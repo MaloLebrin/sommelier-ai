@@ -24,13 +24,6 @@ export default class extends BaseSchema {
   async createMessageTable() {
     const hasTable = await this.schema.hasTable(this.messageTableName)
     if (hasTable) {
-      this.schema.alterTable(this.messageTableName, (table) => {
-        table.dropColumns('created_at', 'updated_at', 'read_at')
-        table.timestamp('created_at')
-        table.timestamp('updated_at')
-        table.timestamp('read_at').nullable()
-      })
-    } else {
       this.schema.createTable(this.messageTableName, (table) => {
         table.increments('id').primary()
         table.timestamp('created_at')
@@ -39,11 +32,7 @@ export default class extends BaseSchema {
         table.text('content', 'longtext').notNullable()
         table.enum('status', ['draft', 'sent', 'read']).defaultTo('draft').notNullable()
         table.integer('author_id').unsigned().references('users.id')
-        table
-          .integer('conversation_id')
-          .unsigned()
-          .references('conversations.id')
-          .onDelete('CASCADE')
+        table.integer('conversation_id').unsigned().references('conversations.id').nullable()
       })
     }
   }
@@ -60,7 +49,7 @@ export default class extends BaseSchema {
         if (element === this.messageTableName) {
           this.schema.raw('DROP TYPE IF EXISTS "messages_status"')
         }
-        await this.schema.dropTable(element)
+        this.schema.dropTable(element)
       }
     })
   }
