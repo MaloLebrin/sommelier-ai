@@ -18,6 +18,7 @@
     "#abilities/*": "./app/abilities/*.js",
     "#auth/*": "./app/auth/*.js",
     "#config/*": "./config/*.js",
+    "#conversation/*": "./app/conversation/*.js",
     "#core/*": "./app/core/*.js",
     "#database/*": "./database/*.js",
     "#events/*": "./app/events/*.js",
