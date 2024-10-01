@@ -30,11 +30,5 @@ export default class Message extends BaseModel {
   @belongsTo(() => Conversation)
   declare conversation: BelongsTo<typeof Conversation>
 
-  // static async markAsRead(id: number) {
-  //   const message = await this.findOrFail(id)
-  //   message.readAt = DateTime.local()
-  //   await message.save()
-  // }
-
   // Réactions, images
 }
