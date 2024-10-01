@@ -1,5 +1,5 @@
 import { DateTime } from 'luxon'
-import { BaseModel, column, hasOne } from '@adonisjs/lucid/orm'
+import { BaseModel, column, hasOne, manyToMany } from '@adonisjs/lucid/orm'
 import type { HasOne, ManyToMany } from '@adonisjs/lucid/types/relations'
 import Wine from '#wine/models/wine'
 
@@ -14,7 +14,7 @@ export default class Conversation extends BaseModel {
   declare updatedAt: DateTime
 
   // Relationships
-  @column()
+  @manyToMany(() => Wine)
   declare wines: ManyToMany<typeof Wine>
 
   @hasOne(() => Wine)
