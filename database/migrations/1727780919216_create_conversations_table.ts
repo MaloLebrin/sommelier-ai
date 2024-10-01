@@ -6,7 +6,7 @@ export default class extends BaseSchema {
   protected pivotConversaTionWine = 'conversation_wine'
 
   async up() {
-    this.schema.createTable(this.tableName, (table) => {
+    await this.schema.createTable(this.tableName, (table) => {
       table.increments('id').primary()
 
       table.timestamp('created_at')
@@ -15,7 +15,7 @@ export default class extends BaseSchema {
       // Relationships
     })
 
-    this.schema.createTable(this.pivotConversationUser, (table) => {
+    await this.schema.createTable(this.pivotConversationUser, (table) => {
       table.increments('id').primary()
       table.integer('user_id').unsigned().references('users.id')
       table.integer('conversation_id').unsigned().references('conversations.id')
@@ -24,7 +24,7 @@ export default class extends BaseSchema {
       table.timestamp('updated_at', { useTz: true })
     })
 
-    this.schema.createTable(this.pivotConversaTionWine, (table) => {
+    await this.schema.createTable(this.pivotConversaTionWine, (table) => {
       table.increments('id').primary()
       table.integer('wine_id').unsigned().references('wines.id')
       table.integer('conversation_id').unsigned().references('conversations.id')
@@ -35,8 +35,8 @@ export default class extends BaseSchema {
   }
 
   async down() {
-    this.schema.dropTable(this.tableName)
-    this.schema.dropTable(this.pivotConversationUser)
-    this.schema.dropTable(this.pivotConversaTionWine)
+    await this.schema.dropTable(this.pivotConversationUser)
+    await this.schema.dropTable(this.pivotConversaTionWine)
+    await this.schema.dropTable(this.tableName)
   }
 }
