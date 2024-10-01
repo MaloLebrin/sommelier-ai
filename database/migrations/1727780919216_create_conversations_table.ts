@@ -36,8 +36,13 @@ export default class extends BaseSchema {
   }
 
   async down() {
-    await this.schema.dropTable(this.pivotConversationUser)
-    await this.schema.dropTable(this.pivotConversaTionWine)
-    await this.schema.dropTable(this.tableName)
+    ;[this.pivotConversaTionWine, this.pivotConversationUser, this.tableName].forEach(
+      async (element) => {
+        const hasTabe = await this.schema.hasTable(element)
+        if (hasTabe) {
+          await this.schema.dropTable(element)
+        }
+      }
+    )
   }
 }
