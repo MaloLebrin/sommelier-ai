@@ -1,0 +1,8 @@
+{
+  "status": {
+    "draft": "Draft",
+    "read": "Read",
+    "sent": "Sent",
+    "received": "Received"
+  }
+}

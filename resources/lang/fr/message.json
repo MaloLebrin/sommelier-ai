@@ -1,0 +1,8 @@
+{
+  "status": {
+    "draft": "Brouillon",
+    "read": "Lu",
+    "sent": "Envoyé",
+    "received": "Reçu"
+  }
+}

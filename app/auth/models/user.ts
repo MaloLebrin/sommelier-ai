@@ -1,8 +1,11 @@
 import { DateTime } from 'luxon'
 import hash from '@adonisjs/core/services/hash'
 import { compose } from '@adonisjs/core/helpers'
-import { BaseModel, column } from '@adonisjs/lucid/orm'
+import { BaseModel, beforeSave, column, hasMany, manyToMany } from '@adonisjs/lucid/orm'
 import { withAuthFinder } from '@adonisjs/auth/mixins/lucid'
+import Conversation from '#conversation/models/conversation'
+import type { HasMany, ManyToMany } from '@adonisjs/lucid/types/relations'
+import Message from '#message/models/message'
 
 const AuthFinder = withAuthFinder(() => hash.use('scrypt'), {
   uids: ['email'],
@@ -17,6 +20,12 @@ export default class User extends compose(BaseModel, AuthFinder) {
   declare fullName: string | null
 
   @column()
+  declare firstName: string | null
+
+  @column()
+  declare lastName: string | null
+
+  @column()
   declare email: string
 
   @column({ serializeAs: null })
@@ -27,4 +36,28 @@ export default class User extends compose(BaseModel, AuthFinder) {
 
   @column.dateTime({ autoCreate: true, autoUpdate: true })
   declare updatedAt: DateTime | null
+
+  // Relationships
+  @manyToMany(() => Conversation)
+  declare conversations: ManyToMany<typeof Conversation>
+
+  @hasMany(() => Message, {
+    foreignKey: 'authorId',
+  })
+  declare messages: HasMany<typeof Message>
+
+  /**
+   * Runs before saving a new record
+   */
+  @beforeSave()
+  static async composeFullName(user: User) {
+    let strings = []
+    if (user.firstName) {
+      strings.push(user.firstName)
+    }
+    if (user.lastName) {
+      strings.push(user.lastName)
+    }
+    user.fullName = strings.join(' ')
+  }
 }
