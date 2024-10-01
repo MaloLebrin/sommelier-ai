@@ -22,7 +22,9 @@ export default class extends BaseSchema {
         .notNullable()
 
       // Relationships
-      table.integer('author_id').unsigned().references('users.id').onDelete('CASCADE')
+      table.integer('author_id').unsigned().references('users.id')
+
+      table.integer('conversation_id').unsigned().references('conversations.id').onDelete('CASCADE') // delete all messages when conversation is deleted
     })
   }
 

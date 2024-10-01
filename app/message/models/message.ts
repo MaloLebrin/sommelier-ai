@@ -1,7 +1,8 @@
 import { DateTime } from 'luxon'
-import { BaseModel, column } from '@adonisjs/lucid/orm'
+import { BaseModel, belongsTo, column } from '@adonisjs/lucid/orm'
 import User from '#auth/models/user'
-import type { HasOne } from '@adonisjs/lucid/types/relations'
+import type { BelongsTo, HasOne } from '@adonisjs/lucid/types/relations'
+import Conversation from '#conversation/models/conversation'
 
 export default class Message extends BaseModel {
   @column({ isPrimary: true })
@@ -26,11 +27,14 @@ export default class Message extends BaseModel {
   @column()
   declare authorId: HasOne<typeof User>
 
+  @belongsTo(() => Conversation)
+  declare conversation: BelongsTo<typeof Conversation>
+
   // static async markAsRead(id: number) {
   //   const message = await this.findOrFail(id)
   //   message.readAt = DateTime.local()
   //   await message.save()
   // }
 
-  // Réactions, images, conversation
+  // Réactions, images
 }
