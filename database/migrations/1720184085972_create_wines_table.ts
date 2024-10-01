@@ -41,6 +41,7 @@ export default class extends BaseSchema {
   async down() {
     const hasTable = await this.schema.hasTable(this.tableName)
     if (hasTable) {
+      // this.schema.raw('DROP TYPE IF EXISTS "wines_colors"')
       this.schema.dropTable(this.tableName)
     }
   }

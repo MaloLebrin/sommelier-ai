@@ -3,8 +3,6 @@ import { BaseSchema } from '@adonisjs/lucid/schema'
 export default class extends BaseSchema {
   protected conversationTableName = 'conversations'
   protected messageTableName = 'messages'
-  protected pivotConversationUser = 'conversation_user'
-  protected pivotConversaTionWine = 'conversation_wine'
 
   async createConversationTable() {
     const hasTable = await this.schema.hasTable(this.conversationTableName)
@@ -56,12 +54,7 @@ export default class extends BaseSchema {
   }
 
   async down() {
-    ;[
-      this.pivotConversaTionWine,
-      this.pivotConversationUser,
-      this.messageTableName,
-      this.conversationTableName,
-    ].forEach(async (element) => {
+    ;[this.messageTableName, this.conversationTableName].forEach(async (element) => {
       const hasTable = await this.schema.hasTable(element)
       if (hasTable) {
         if (element === this.messageTableName) {
