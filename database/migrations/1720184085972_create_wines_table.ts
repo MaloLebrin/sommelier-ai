@@ -8,7 +8,7 @@ export default class extends BaseSchema {
     const hasTable = await this.schema.hasTable(this.tableName)
     if (!hasTable) {
       this.schema.createTable(this.tableName, (table) => {
-        table.increments('id')
+        table.increments('id').primary()
         table.timestamp('created_at')
         table.timestamp('updated_at')
 
