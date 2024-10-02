@@ -7,38 +7,38 @@ export default class extends BaseSeeder {
   async run() {
     const users = await User.createMany([
       {
+        email: 'sommelier@sommelier.ai',
+        password: 'password',
+        firstName: 'Sommelier',
+        lastName: 'AI',
+      },
+      {
         email: 'harrypotter@poudlard.com',
         password: 'password',
         firstName: 'Harry',
         lastName: 'Potter',
-      },
-      {
-        email: 'albusdumbledore@poudlard.com',
-        password: 'password',
-        firstName: 'Albus',
-        lastName: 'Dumbledore',
       },
     ])
 
     const conversation = await Conversation.create({})
     await Promise.all(users.map((user) => user.related('conversations').attach([conversation.id])))
 
-    const [harryPotter, albusDumbledore] = users
+    const [sommerlierAi, harryPotter] = users
 
     const [message1, message2] = await Message.createMany([
       {
-        content: 'Hello Harry',
-        status: 'sent',
+        content: 'Hello Harry, how can i help you?',
+        status: 'read',
       },
       {
-        content: 'Hello PHD Dumbledore',
+        content: 'Hello Sommelier AI, I need help with a potion',
         status: 'sent',
       },
     ])
 
     await message1.related('conversation').associate(conversation)
     await message2.related('conversation').associate(conversation)
-    await harryPotter.related('messages').save(message1)
-    await albusDumbledore.related('messages').save(message2)
+    await harryPotter.related('messages').save(message2)
+    await sommerlierAi.related('messages').save(message1)
   }
 }
