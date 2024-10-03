@@ -1,13 +1,13 @@
 export function LoadingMessage() {
   const blueCircle = {
     'animation-delay': '0.1s'
-  };
+  } as any
   const greenCircle = {
     'animation-delay': '0.2s'
-  };
+  } as any
   const redCircle = {
     'animation-delay': '0.3s'
-  };
+  } as any
 
   return (
     <div

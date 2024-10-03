@@ -1,4 +1,3 @@
-import { csrfField } from "#start/view"
 import type { Lang } from "#types/lang"
 import { SendButton } from "#views/components/chat/SendButton"
 import i18nManager from "@adonisjs/i18n/services/main"
