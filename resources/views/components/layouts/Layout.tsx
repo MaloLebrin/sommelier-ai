@@ -42,11 +42,11 @@ export function Layout({
             type="image/png"
             sizes="16x16"
             href="{{ asset('resources/images/favicon-16x16.png') }}"
-          />
+          /> */}
           <link
             href="https://fonts.bunny.net/css?family=instrument-sans:400,400i,500,500i,600,600i,700,700i"
             rel="stylesheet"
-          /> */}
+          />
           <title>{title}</title>
 
           <Vite.Entrypoint entrypoints={['resources/css/app.scss', 'resources/js/app.js']} />
