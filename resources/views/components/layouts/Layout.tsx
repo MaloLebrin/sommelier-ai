@@ -2,20 +2,25 @@ import { Vite } from '#start/view'
 import type { Lang } from '#types/lang'
 import { Footer } from '#views/components/footer/Footer'
 import { Header } from '#views/components/header/Header'
+import i18nManager from '@adonisjs/i18n/services/main'
 import type { Children } from '@kitajs/html'
 
 interface LayoutProps {
   children: Children
   title?: string
+  description?: string
   lang?: Lang
 }
 
 export function Layout({
   children,
   title = 'Sommelier AI',
-  lang = 'en' }: LayoutProps) {
+  lang = 'en',
+  description
+ }: LayoutProps) {
   // TODO add font
   // FIXME assets
+  const i18n = i18nManager.locale(lang)
 
   return (
     <>
@@ -24,6 +29,7 @@ export function Layout({
         <head>
           <meta charset="utf-8" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <meta name="description" content={description ||i18n.t('base.catchPhrase')} />
           <link rel="preconnect" href="https://fonts.bunny.net" />
           <script src="https://cdn.tailwindcss.com"></script>
           {/* <link

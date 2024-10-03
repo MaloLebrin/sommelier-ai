@@ -16,5 +16,6 @@
     "error": "Une erreur est survenue. Veuillez réessayer plus tard.",
     "getStarted": "Commencer",
     "scrollToBottom": "Descendre en bas du chat"
-  }
+  },
+  "catchPhrase": "Améliorez votre expérience culinaire avec des recommandations de vins basées sur l'IA."
 }

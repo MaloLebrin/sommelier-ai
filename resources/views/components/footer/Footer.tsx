@@ -6,7 +6,7 @@ interface FooterProps {
 }
 
 export function Footer({ lang = 'en' }: FooterProps) {
-  const { t } = i18nManager.locale(lang)
+  const i18n = i18nManager.locale(lang)
 
   return (<footer class="sr-only">
     <div class="container px-4 mx-auto text-center">
@@ -14,7 +14,7 @@ export function Footer({ lang = 'en' }: FooterProps) {
         &copy; {new Date().getFullYear()} AI Sommelier Assistant. All rights reserved.
       </p>
       <p class="mt-2">
-        Enhancing your dining experience with AI-powered wine recommendations.
+        {i18n.t(('base.catchPhrase'))}
       </p>
     </div>
   </footer>)
