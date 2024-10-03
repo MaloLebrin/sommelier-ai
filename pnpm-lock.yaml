@@ -35,18 +35,18 @@ importers:
       '@adonisjs/vite':
         specifier: ^3.0.0
         version: 3.0.0(@adonisjs/core@6.14.0(@adonisjs/assembler@7.8.2(typescript@5.6.2))(@vinejs/vine@2.1.0)(edge.js@6.2.0))(@adonisjs/shield@8.1.1(@adonisjs/core@6.14.0(@adonisjs/assembler@7.8.2(typescript@5.6.2))(@vinejs/vine@2.1.0)(edge.js@6.2.0))(@adonisjs/i18n@2.1.1(@adonisjs/core@6.14.0(@adonisjs/assembler@7.8.2(typescript@5.6.2))(@vinejs/vine@2.1.0)(edge.js@6.2.0))(@vinejs/vine@2.1.0)(edge.js@6.2.0))(@adonisjs/session@7.5.0(@adonisjs/core@6.14.0(@adonisjs/assembler@7.8.2(typescript@5.6.2))(@vinejs/vine@2.1.0)(edge.js@6.2.0))(edge.js@6.2.0))(edge.js@6.2.0))(edge.js@6.2.0)(vite@5.4.8(@types/node@22.7.4))
-      '@iconify-json/heroicons':
-        specifier: ^1.2.0
-        version: 1.2.0
+      '@kitajs/html':
+        specifier: ^4.2.2
+        version: 4.2.2
+      '@kitajs/ts-html-plugin':
+        specifier: ^4.1.0
+        version: 4.1.0(@kitajs/html@4.2.2)(typescript@5.6.2)
       '@vinejs/vine':
         specifier: ^2.1.0
         version: 2.1.0
-      edge-iconify:
-        specifier: ^2.0.1
-        version: 2.0.1(edge.js@6.2.0)
-      edge.js:
-        specifier: ^6.2.0
-        version: 6.2.0
+      class-variance-authority:
+        specifier: ^0.7.0
+        version: 0.7.0
       luxon:
         specifier: ^3.5.0
         version: 3.5.0
@@ -72,6 +72,9 @@ importers:
       '@adonisjs/tsconfig':
         specifier: ^1.4.0
         version: 1.4.0
+      '@iconify-json/heroicons':
+        specifier: ^1.2.0
+        version: 1.2.0
       '@japa/assert':
         specifier: ^3.0.0
         version: 3.0.0(@japa/runner@3.1.4)(openapi-types@1.3.4)
@@ -625,10 +628,6 @@ packages:
   '@iconify-json/heroicons@1.2.0':
     resolution: {integrity: sha512-EmvGN0L9EUJCmQ82rkLGZ4tkz0YGQfZV7ugKT6UvHni/bxNitQrD0gLj6NJj2W9zsSoXyNHyCX236+EJmO4pmA==}
 
-  '@iconify/iconify@3.1.1':
-    resolution: {integrity: sha512-1nemfyD/OJzh9ALepH7YfuuP8BdEB24Skhd8DXWh0hzcOxImbb1ZizSZkpCzAwSZSGcJFmscIBaBQu+yLyWaxQ==}
-    deprecated: no longer maintained, switch to modern iconify-icon web component
-
   '@iconify/types@2.0.0':
     resolution: {integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==}
 
@@ -702,6 +701,17 @@ packages:
 
   '@jsdevtools/ono@7.1.3':
     resolution: {integrity: sha512-4JQNk+3mVzK3xh2rqd6RB4J46qUR19azEHBneZyTZM+c456qOrbbM/5xcR8huNCCcbVt7+UmizG6GuUvPvKUYg==}
+
+  '@kitajs/html@4.2.2':
+    resolution: {integrity: sha512-di0yCy60m/ywY2SgdhQ/Xz0GM9BaxF6XPCZ4DoSA2/LfhIVM9mgs8udMtr6KuyWe1254hOSJDl3RE9npFOzM8Q==}
+    engines: {node: '>=12'}
+
+  '@kitajs/ts-html-plugin@4.1.0':
+    resolution: {integrity: sha512-9e39FE/yhdmVsN0CmlvwefN1D+yaOOTz/30WVg2E1Pi7sEnv16EhbFvVUtqwV/bltSv9Wq9cp5oxI0gNv/ukYQ==}
+    hasBin: true
+    peerDependencies:
+      '@kitajs/html': ^4.2.2
+      typescript: ^5.6.2
 
   '@lukeed/ms@2.0.2':
     resolution: {integrity: sha512-9I2Zn6+NJLfaGoz9jN3lpwDgAYvfGeNYdbAIjJOqzs4Tpc+VU3Jqq4IofSUBKajiDS8k9fZIg18/z13mpk1bsA==}
@@ -1353,6 +1363,9 @@ packages:
     resolution: {integrity: sha512-TdHqgGf9odd8SXNuxtUBVx8Nv+qZOejE6qyqiy5NtbYYQOeFa6zmHkxlPzmaLxWWHsU6nJmB7AETdVPi+2NBUg==}
     engines: {node: '>=8'}
 
+  class-variance-authority@0.7.0:
+    resolution: {integrity: sha512-jFI8IQw4hczaL4ALINxqLEXQbWcNjoSkloa4IaufXCJr6QawJyw7tuRysRsrE8w2p/4gGaxKIt/hX3qz/IbD1A==}
+
   classnames@2.5.1:
     resolution: {integrity: sha512-saHYOzhIQs6wy2sVxTM6bUDsQO4F50V9RQ22qBpEdCW+I+/Wmke2HOl6lS6dTpdxVhb88/I6+Hs+438c3lfUow==}
 
@@ -1376,6 +1389,10 @@ packages:
     resolution: {integrity: sha512-nPdaFdQ0h/GEigbPClz11D0v/ZJEwxmeVZGeMo3Z5StPtUTkA9o1lD6QwoirYiSDzbcwn2XcjwmCp68W1IS4TA==}
     engines: {node: '>=18'}
 
+  cliui@8.0.1:
+    resolution: {integrity: sha512-BSeNnyus75C4//NQ9gQt1/csTXyo/8Sb+afLAkzAptFuMsod9HFokGNudZpi/oQV73hnVK+sR+5PVRMd+Dr7YQ==}
+    engines: {node: '>=12'}
+
   clone-deep@4.0.1:
     resolution: {integrity: sha512-neHB9xuzh/wk0dIHweyAXv2aPGZIVk3pLMe+/RNzINf17fe0OG96QroktYAUm7SM1PBnzTabaLboqqxDyMU+SQ==}
     engines: {node: '>=6'}
@@ -1387,6 +1404,10 @@ packages:
   clone@2.1.2:
     resolution: {integrity: sha512-3Pe/CF1Nn94hyhIYpjtiLhdCoEoz0DqQ+988E9gmeEdQZlojxnOb74wctFyuwWQHzqyf9X7C7MG8juUpqBJT8w==}
     engines: {node: '>=0.8'}
+
+  clsx@2.0.0:
+    resolution: {integrity: sha512-rQ1+kcj+ttHG0MKVGBUXwayCCF1oh39BF5COIpRzuCEv8Mwjv0XucrI2ExNTOn9IlLifGClWQcU9BrZORvtw6Q==}
+    engines: {node: '>=6'}
 
   code-block-writer@13.0.2:
     resolution: {integrity: sha512-XfXzAGiStXSmCIwrkdfvc7FS5Dtj8yelCtyOf2p2skCAfvLd6zu0rGzuS9NSCO3bq1JKpFZ7tbKdKlcd5occQA==}
@@ -1480,6 +1501,9 @@ packages:
     resolution: {integrity: sha512-/Tb/JcjK111nNScGob5MNtsntNM1aCNUDipB/TkwZFhyDrrE47SOx/18wF2bbjgc3ZzCSKW1T5nt5EbFoAz/Vg==}
     engines: {node: '>=4'}
     hasBin: true
+
+  csstype@3.1.3:
+    resolution: {integrity: sha512-M1uQkMl8rQK/szD0LNhtqxIPLpimGm8sOBwU7lLnCpSbTyY3yeU1Vc7l4KT5zT4s/yOxHH5O7tIuuLOCnLADRw==}
 
   dag-map@1.0.2:
     resolution: {integrity: sha512-+LSAiGFwQ9dRnRdOeaj7g47ZFJcOUPukAP8J3A3fuZ1g9Y44BG+P1sgApjLXTQPOzC4+7S9Wr8kXsfpINM4jpw==}
@@ -1600,12 +1624,6 @@ packages:
   edge-error@4.0.1:
     resolution: {integrity: sha512-z5mNO97k8hRVpJ6Ew1qbkMTfQ44CwuWnl+ShMCrEFgD+b324CnjBS6HbiR+Wh6Wcmw9C+/XsFBHzZ+376PpD/w==}
     engines: {node: '>=18.16.0'}
-
-  edge-iconify@2.0.1:
-    resolution: {integrity: sha512-VRWeiz4qnm/dlcGQuMd/olTTfCHHCRleW6kcy0EdXZE8hreXDx01I55f/yzYezePGsWwBuKirFVzwnrz4qMo0g==}
-    engines: {node: '>=18.16.0'}
-    peerDependencies:
-      edge.js: ^6.0.0
 
   edge-lexer@6.0.2:
     resolution: {integrity: sha512-C30wqcw66JwpepLnsTqTp0P4JqKa2xEbAfNj3dPOvBYq4zybiYuhlpSzExvNUeoAAnbjgozgVTVAQ38HctyV4g==}
@@ -1928,6 +1946,10 @@ packages:
 
   functions-have-names@1.2.3:
     resolution: {integrity: sha512-xckBUXyTIqT97tq2x2AMb+g163b5JFysYk0x4qxNFwbfQkmNZoiRHb6sPzI9/QV33WeuvVYBUIiD4NzNIyqaRQ==}
+
+  get-caller-file@2.0.5:
+    resolution: {integrity: sha512-DyFP3BM/3YHTQOCUL/w0OZHR0lpKeGrxotcHWcqNEdnltqFwXVfhEBQ94eIo34AfQpo0rGki4cyIiftY06h2Fg==}
+    engines: {node: 6.* || 8.* || >= 10.*}
 
   get-east-asian-width@1.2.0:
     resolution: {integrity: sha512-2nk+7SIVb14QrgXFHcm84tD4bKQz0RxPuMT8Ag5KPOq7J5fEmAg0UbXdTOSHqNuHSU28k55qnceesxXRZGzKWA==}
@@ -2994,6 +3016,10 @@ packages:
     resolution: {integrity: sha512-qx+xQGZVsy55CH0a1hiVwHmqjLryfh7wQyF5HO07XJ9f7dQMY/gPQHhlyDkIzJKC+x2fUCpCcUODUUUFrm7SHA==}
     hasBin: true
 
+  require-directory@2.1.1:
+    resolution: {integrity: sha512-fGxEI7+wsG9xrvdjsrlmL22OMTTiHRwAMroiEeMgq8gzoLC/PQr7RsRDSTLUg/bZAZtF+TVIkHc6/4RIKrui+Q==}
+    engines: {node: '>=0.10.0'}
+
   resolve-from@4.0.0:
     resolution: {integrity: sha512-pb/MYmXstAkysRFx8piNI1tGFNQIFA3vkE3Gq4EuA1dF6gHp/+vgZqsCGJapvy8N3Q+4o7FwvquPJcnZ7RYy4g==}
     engines: {node: '>=4'}
@@ -3556,6 +3582,10 @@ packages:
     resolution: {integrity: sha512-LKYU1iAXJXUgAXn9URjiu+MWhyUXHsvfp7mcuYm9dSUKK0/CjtrUwFAxD82/mCWbtLsGjFIad0wIsod4zrTAEQ==}
     engines: {node: '>=0.4'}
 
+  y18n@5.0.8:
+    resolution: {integrity: sha512-0pfFzegeDWJHJIAmTLRP2DwHjdF5s7jo9tuztdQxAhINCdvS+3nGINqPd00AphqJR/0LhANUS6/+7SCb98YOfA==}
+    engines: {node: '>=10'}
+
   yaml@2.5.1:
     resolution: {integrity: sha512-bLQOjaX/ADgQ20isPJRvF0iRUHIxVhYvr53Of7wGcWlO2jvtUlH5m87DsmulFVxRpNLOnI4tB6p/oh8D7kpn9Q==}
     engines: {node: '>= 14'}
@@ -3563,6 +3593,10 @@ packages:
 
   yargs-parser@21.1.1:
     resolution: {integrity: sha512-tVpsJW7DdjecAiFpbIB1e3qxIQsE6NoPc5/eTdrbbIC4h0LVsWhnoa3g+m2HclBIujHzsxZ4VJVA+GUuc2/LBw==}
+    engines: {node: '>=12'}
+
+  yargs@17.7.2:
+    resolution: {integrity: sha512-7dSzzRQ++CKnNI/krKnYRV7JKKPUXMEh61soaHKg9mrWEhzFWhFnxPxGl+69cD1Ou63C13NUPCnmIcrvqCuM6w==}
     engines: {node: '>=12'}
 
   yn@3.1.1:
@@ -4106,10 +4140,6 @@ snapshots:
     dependencies:
       '@iconify/types': 2.0.0
 
-  '@iconify/iconify@3.1.1':
-    dependencies:
-      '@iconify/types': 2.0.0
-
   '@iconify/types@2.0.0': {}
 
   '@isaacs/cliui@8.0.2':
@@ -4203,6 +4233,18 @@ snapshots:
 
   '@jsdevtools/ono@7.1.3': {}
 
+  '@kitajs/html@4.2.2':
+    dependencies:
+      csstype: 3.1.3
+
+  '@kitajs/ts-html-plugin@4.1.0(@kitajs/html@4.2.2)(typescript@5.6.2)':
+    dependencies:
+      '@kitajs/html': 4.2.2
+      chalk: 4.1.2
+      tslib: 2.7.0
+      typescript: 5.6.2
+      yargs: 17.7.2
+
   '@lukeed/ms@2.0.2': {}
 
   '@noble/hashes@1.5.0': {}
@@ -4264,7 +4306,8 @@ snapshots:
 
   '@poppinss/hooks@7.2.4': {}
 
-  '@poppinss/inspect@1.0.1': {}
+  '@poppinss/inspect@1.0.1':
+    optional: true
 
   '@poppinss/intl-formatter@3.0.3':
     dependencies:
@@ -4712,7 +4755,8 @@ snapshots:
 
   assertion-error@2.0.1: {}
 
-  astring@1.9.0: {}
+  astring@1.9.0:
+    optional: true
 
   async-retry@1.3.3:
     dependencies:
@@ -4850,7 +4894,12 @@ snapshots:
 
   ci-info@4.0.0: {}
 
-  classnames@2.5.1: {}
+  class-variance-authority@0.7.0:
+    dependencies:
+      clsx: 2.0.0
+
+  classnames@2.5.1:
+    optional: true
 
   clean-regexp@1.0.0:
     dependencies:
@@ -4873,6 +4922,12 @@ snapshots:
       slice-ansi: 5.0.0
       string-width: 7.2.0
 
+  cliui@8.0.1:
+    dependencies:
+      string-width: 4.2.3
+      strip-ansi: 6.0.1
+      wrap-ansi: 7.0.0
+
   clone-deep@4.0.1:
     dependencies:
       is-plain-object: 2.0.4
@@ -4882,6 +4937,8 @@ snapshots:
   clone@1.0.4: {}
 
   clone@2.1.2: {}
+
+  clsx@2.0.0: {}
 
   code-block-writer@13.0.2: {}
 
@@ -4969,6 +5026,8 @@ snapshots:
 
   cssesc@3.0.0: {}
 
+  csstype@3.1.3: {}
+
   dag-map@1.0.2: {}
 
   data-uri-to-buffer@2.0.2: {}
@@ -5053,14 +5112,10 @@ snapshots:
 
   edge-error@4.0.1: {}
 
-  edge-iconify@2.0.1(edge.js@6.2.0):
-    dependencies:
-      '@iconify/iconify': 3.1.1
-      edge.js: 6.2.0
-
   edge-lexer@6.0.2:
     dependencies:
       edge-error: 4.0.1
+    optional: true
 
   edge-parser@9.0.3:
     dependencies:
@@ -5069,6 +5124,7 @@ snapshots:
       edge-error: 4.0.1
       edge-lexer: 6.0.2
       js-stringify: 1.0.2
+    optional: true
 
   edge.js@6.2.0:
     dependencies:
@@ -5084,6 +5140,7 @@ snapshots:
       js-stringify: 1.0.2
       property-information: 6.5.0
       stringify-attributes: 4.0.0
+    optional: true
 
   edgejs-parser@0.2.10:
     dependencies:
@@ -5223,7 +5280,8 @@ snapshots:
 
   escalade@3.2.0: {}
 
-  escape-goat@4.0.0: {}
+  escape-goat@4.0.0:
+    optional: true
 
   escape-html@1.0.3: {}
 
@@ -5455,7 +5513,8 @@ snapshots:
 
   fresh@0.5.2: {}
 
-  fs-readdir-recursive@1.1.0: {}
+  fs-readdir-recursive@1.1.0:
+    optional: true
 
   fsevents@2.3.3:
     optional: true
@@ -5470,6 +5529,8 @@ snapshots:
       functions-have-names: 1.2.3
 
   functions-have-names@1.2.3: {}
+
+  get-caller-file@2.0.5: {}
 
   get-east-asian-width@1.2.0: {}
 
@@ -5795,7 +5856,8 @@ snapshots:
 
   joycon@3.1.1: {}
 
-  js-stringify@1.0.2: {}
+  js-stringify@1.0.2:
+    optional: true
 
   js-tokens@4.0.0: {}
 
@@ -6353,7 +6415,8 @@ snapshots:
 
   process@0.11.10: {}
 
-  property-information@6.5.0: {}
+  property-information@6.5.0:
+    optional: true
 
   proxy-addr@2.0.7:
     dependencies:
@@ -6453,6 +6516,8 @@ snapshots:
   regjsparser@0.10.0:
     dependencies:
       jsesc: 0.5.0
+
+  require-directory@2.1.1: {}
 
   resolve-from@4.0.0: {}
 
@@ -6700,6 +6765,7 @@ snapshots:
   stringify-attributes@4.0.0:
     dependencies:
       escape-goat: 4.0.0
+    optional: true
 
   strip-ansi@6.0.1:
     dependencies:
@@ -7055,9 +7121,21 @@ snapshots:
 
   xtend@4.0.2: {}
 
+  y18n@5.0.8: {}
+
   yaml@2.5.1: {}
 
   yargs-parser@21.1.1: {}
+
+  yargs@17.7.2:
+    dependencies:
+      cliui: 8.0.1
+      escalade: 3.2.0
+      get-caller-file: 2.0.5
+      require-directory: 2.1.1
+      string-width: 4.2.3
+      y18n: 5.0.8
+      yargs-parser: 21.1.1
 
   yn@3.1.1: {}
 
