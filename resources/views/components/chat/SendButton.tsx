@@ -1,4 +1,5 @@
 import type { Lang } from "#types/lang"
+import { PaperPlane } from "#views/icons/PaperPlane";
 import i18nManager from "@adonisjs/i18n/services/main";
 
 interface SendButtonProps {
@@ -25,7 +26,8 @@ export function SendButton({
       class="absolute top-[19px] right-5 group hover:cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
       title={title || i18n.t('form.validation.send')}
     >
-      <span class="capitalize">{i18n.t('form.validation.send')}</span>
+      <PaperPlane class="w-6 h-6 text-indigo-500 group-hover:text-indigo-700" />  
+      <span class="sr-only">{i18n.t('form.validation.send')}</span>
     </button>
 
   )

@@ -70,7 +70,6 @@
     "@adonisjs/shield": "^8.1.1",
     "@adonisjs/static": "^1.1.1",
     "@adonisjs/vite": "^3.0.0",
-    "@iconify-json/heroicons": "^1.2.0",
     "@kitajs/html": "^4.2.2",
     "@kitajs/ts-html-plugin": "^4.1.0",
     "@vinejs/vine": "^2.1.0",
