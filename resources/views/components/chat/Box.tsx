@@ -37,7 +37,7 @@ export function ChatBox({ messageList, lang ='en' }: ChatBoxProps) {
         ))
       )}
       {isLoading && <LoadingMessage  />}
-      <DonateMessage />
+      <DonateMessage lang={lang} />
     </div>
   );
 }
