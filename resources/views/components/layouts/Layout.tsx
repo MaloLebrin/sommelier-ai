@@ -57,11 +57,11 @@ export function Layout({
           <Vite.Entrypoint entrypoints={['resources/css/app.scss', 'resources/js/app.js']} />
         </head>
         <body>
-          <body class="h-[100svh]">
+          <body class="h-100 md:h-[100svh]">
             <Header lang={lang} />
 
             <main
-              class="h-full pt-20 bg-center bg-no-repeat bg-cover"
+              class="h-full pt-8 px-2 bg-center bg-no-repeat bg-cover"
               style="
     background-image: url('https://i.ebayimg.com/images/g/bm4AAOSwW89j1f-k/s-l1600.jpg')"
             >
