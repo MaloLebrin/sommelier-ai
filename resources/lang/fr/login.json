@@ -12,7 +12,11 @@
       "label": "Mot de passe",
       "placeholder": "Entrez votre mot de passe"
     },
+    "rememberMe": "Se souvenir de moi",
     "submit": "Se connecter",
-    "forgot": "Mot de passe oublié ?"
+    "forgot": "Mot de passe oublié ?",
+    "errors": {
+      "accountNotFound": "Aucun compte n'a été trouvé avec ces informations."
+    }
   }
 }

@@ -3,16 +3,14 @@ import { LoginForm } from "#views/components/auth/LoginForm";
 import { Layout } from "#views/components/layouts/Layout";
 import i18nManager from "@adonisjs/i18n/services/main";
 
-interface LoginProps extends PageProps {
-
-}
+interface LoginProps extends PageProps {}
 
 export function Login({ lang = 'en' }: LoginProps) {
   const i18n = i18nManager.locale(lang)
 
   return (
     <Layout title={i18n.t('login.page.title')} lang={lang}>
-      <div class="container flex flex-col items-center h-full mx-auto text-white">
+      <div class="container h-full mx-auto text-zinc-700">
         <LoginForm lang={lang} />
       </div>
     </Layout>
