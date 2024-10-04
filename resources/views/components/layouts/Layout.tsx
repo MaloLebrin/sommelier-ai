@@ -18,14 +18,13 @@ export function Layout({
   lang = 'en',
   description
  }: LayoutProps) {
-  // TODO add font
   // FIXME assets
   const i18n = i18nManager.locale(lang)
 
   return (
     <>
       {'<!DOCTYPE html>'}
-      <html lang="en">
+      <html lang={lang}>
         <head>
           <meta charset="utf-8" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />

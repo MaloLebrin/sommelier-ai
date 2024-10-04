@@ -11,7 +11,7 @@ export function Footer({ lang = 'en' }: FooterProps) {
   return (<footer class="sr-only">
     <div class="container px-4 mx-auto text-center">
       <p>
-        &copy; {new Date().getFullYear()} AI Sommelier Assistant. All rights reserved.
+        &copy; {new Date().getFullYear()} AI Sommelier Assistant. {i18n.t(('base.copyright'))}
       </p>
       <p class="mt-2">
         {i18n.t(('base.catchPhrase'))}
