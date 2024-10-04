@@ -54,7 +54,7 @@ export function Layout({
           />
           <title>{title}</title>
 
-          <Vite.Entrypoint entrypoints={['resources/css/app.scss', 'resources/js/app.js']} />
+          <Vite.Entrypoint entrypoints={['resources/css/app.scss', 'resources/ts/app.ts']} />
         </head>
         <body>
           <body class="h-100 md:h-[100svh]">
