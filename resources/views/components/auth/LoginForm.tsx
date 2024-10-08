@@ -11,7 +11,6 @@ export function LoginForm({ lang = 'en' }: { lang: Lang }) {
   const i18n = i18nManager.locale(lang)
 
   return (
-    <div class="container mx-auto">
       <form
         class="no-scroll-bar relative h-full w-full sm:max-h-[350px] sm:max-w-[777px] bg-white bg-opacity-50 backdrop-blur rounded-3xl shadow-lg pt-4 px-6 pb-10 mt-14 overflow-y-hidden space-y-2"
         action={route('auth.login')}
@@ -53,6 +52,5 @@ export function LoginForm({ lang = 'en' }: { lang: Lang }) {
           {i18n.t('login.form.submit')}
         </Button>
       </form>
-    </div>
   )
 }

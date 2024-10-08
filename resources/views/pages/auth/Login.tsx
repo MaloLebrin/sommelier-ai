@@ -10,7 +10,8 @@ export function Login({ lang = 'en' }: LoginProps) {
 
   return (
     <Layout title={i18n.t('login.page.title')} lang={lang}>
-      <div class="container h-full mx-auto text-zinc-700">
+      <div class="container flex justify-center w-full mx-auto
+      ">
         <LoginForm lang={lang} />
       </div>
     </Layout>
