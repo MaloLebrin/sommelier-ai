@@ -1,6 +1,6 @@
 import type { PageProps } from "#types/index";
 import { ChatBox } from "#views/components/chat/Box";
-import { ChatForm } from "#views/components/chat/form/Form";
+import { ChatForm } from "#views/components/chat/form/ChatForm";
 import { Layout } from "#views/components/layouts/Layout";
 
 interface HomeProps extends PageProps {

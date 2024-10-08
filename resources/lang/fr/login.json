@@ -1,0 +1,22 @@
+{
+  "page": {
+    "title": "🍇 Sommelier AI - Connexion",
+    "description": "Connectez-vous à votre compte pour profiter de nos services."
+  },
+  "form": {
+    "email": {
+      "label": "Adresse e-mail",
+      "placeholder": "Entrez votre adresse e-mail"
+    },
+    "password": {
+      "label": "Mot de passe",
+      "placeholder": "Entrez votre mot de passe"
+    },
+    "rememberMe": "Se souvenir de moi",
+    "submit": "Se connecter",
+    "forgot": "Mot de passe oublié ?",
+    "errors": {
+      "accountNotFound": "Aucun compte n'a été trouvé avec ces informations."
+    }
+  }
+}
