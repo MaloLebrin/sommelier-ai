@@ -29,7 +29,7 @@ export default class RegisterController {
     })
 
     if (!user) {
-      session.flash('error', i18n.t('login.form.errors.registrationError'))
+      session.flash('error', i18n.t('auth.form.errors.registrationError'))
       session.flashAll()
 
       return response.redirect().back()

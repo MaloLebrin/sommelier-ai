@@ -23,7 +23,7 @@ export function LoginForm({ lang = 'en' }: { lang: Lang }) {
       >
         {flashMessages.has('error') && (
           <p class="text-red-700">
-            {i18n.t('login.form.errors.accountNotFound')}
+            {i18n.t('auth.form.errors.accountNotFound')}
           </p>
         )}
 
@@ -41,7 +41,7 @@ export function LoginForm({ lang = 'en' }: { lang: Lang }) {
 
         <div>
           <Form.Checkbox name={'remember_me'}>
-            <span>{i18n.t('login.form.rememberMe')}</span>
+            <span>{i18n.t('auth.form.rememberMe')}</span>
           </Form.Checkbox>
         </div>
 
@@ -49,7 +49,7 @@ export function LoginForm({ lang = 'en' }: { lang: Lang }) {
           type="submit"
           lang={lang}
         >
-          {i18n.t('login.form.submit')}
+          {i18n.t('auth.form.submit')}
         </Button>
       </form>
   )

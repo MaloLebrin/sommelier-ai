@@ -18,7 +18,7 @@ export default class LoginController {
     const user = await this.authService.attempt(email, password)
 
     if (!user) {
-      session.flash('error', i18n.t('login.form.errors.accountNotFound'))
+      session.flash('error', i18n.t('auth.form.errors.accountNotFound'))
       session.flashAll()
 
       return response.redirect().back()
