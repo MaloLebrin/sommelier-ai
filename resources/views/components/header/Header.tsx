@@ -37,7 +37,8 @@ export async function Header({ lang = 'en' }: HeaderProps) {
         ) : (
           <a
             href={route('auth.login')}
-            up-layer="new"
+            up-target=".container"
+            up-follow
             up-accept-location={route('pages.home')}
             up-on-accepted="up.render('#the-header', { response: event.response })"
           >
