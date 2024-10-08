@@ -18,7 +18,9 @@ export default class RegisterController {
 
   constructor(private authService: AuthService) {}
 
-  render() {}
+  render({ i18n }: HttpContext) {
+    return <Register lang={i18n.locale as Lang} />;
+  }
 
   async handle({ auth, request, response, session, i18n }: HttpContext) {
     const { firstName, lastName, email, password} = await request.validateUsing(RegisterController.validator)
