@@ -16,7 +16,8 @@
     "submit": "Se connecter",
     "forgot": "Mot de passe oublié ?",
     "errors": {
-      "accountNotFound": "Aucun compte n'a été trouvé avec ces informations."
+      "accountNotFound": "Aucun compte n'a été trouvé avec ces informations.",
+      "registrationError": "Une erreur s'est produite lors de l'inscription'. Veuillez réessayer."
     }
   }
 }

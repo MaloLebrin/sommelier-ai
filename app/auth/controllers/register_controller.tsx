@@ -18,7 +18,7 @@ export default class RegisterController {
 
   render() {}
 
-  async handle({ auth, request, response }: HttpContext) {
+  async handle({ auth, request, response, session, i18n }: HttpContext) {
     const { firstName, lastName, email, password} = await request.validateUsing(RegisterController.validator)
 
     const user = await this.authService.register({
@@ -27,6 +27,13 @@ export default class RegisterController {
       email,
       password,
     })
+
+    if (!user) {
+      session.flash('error', i18n.t('login.form.errors.registrationError'))
+      session.flashAll()
+
+      return response.redirect().back()
+    }
 
     await auth.use('web').login(user)
 
