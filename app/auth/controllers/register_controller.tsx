@@ -2,6 +2,8 @@ import { AuthService } from "#auth/services/auth_service";
 import { inject } from "@adonisjs/core";
 import vine from "@vinejs/vine";
 import type { HttpContext } from "@adonisjs/core/http";
+import { Register } from "#views/pages/auth/Register";
+import type { Lang } from "#types/lang";
 
 @inject()
 export default class RegisterController {
@@ -10,7 +12,7 @@ export default class RegisterController {
       firstName: vine.string().trim().minLength(2).maxLength(255),
       lastName: vine.string().trim().minLength(2).maxLength(255),
       email: vine.string().trim().email().maxLength(255),
-      password: vine.string().minLength(8).maxLength(255),
+      password: vine.string().minLength(5).maxLength(255),
     })
   )
 
@@ -37,6 +39,6 @@ export default class RegisterController {
 
     await auth.use('web').login(user)
 
-    return response.redirect().toPath('/')
+    return response.redirect().toRoute('pages.home')
   }
 }
