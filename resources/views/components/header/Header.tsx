@@ -24,27 +24,37 @@ export async function Header({ lang = 'en' }: HeaderProps) {
           </p>
         </div>
         <div class="flex items-center gap-6">
-        {auth.user ? (
-          <div class="d-flex items-center">
-            <form action={`${route('auth.logout')}?_method=DELETE`} method="post">
-              {csrfField()}
+          {auth.user ? (
+            <div class="d-flex items-center">
+              <form action={`${route('auth.logout')}?_method=DELETE`} method="post">
+                {csrfField()}
 
-              <Button size="small" type="submit" lang={lang}>
-                Se déconnecter
-              </Button>
-            </form>
-          </div>
-        ) : (
-          <a
-            href={route('auth.login')}
-            up-target=".container"
-            up-follow
-            up-accept-location={route('pages.home')}
-            up-on-accepted="up.render('#the-header', { response: event.response })"
-          >
-            Se connecter
-          </a>
-        )}
+                <Button size="small" type="submit" lang={lang}>
+                  {i18n.t('auth.logout.submit')}
+                </Button>
+              </form>
+            </div>
+          ) : (
+            <>
+              <a
+                href={route('auth.login')}
+                up-target=".container"
+                up-preload
+                up-accept-location={route('pages.home')}
+                up-on-accepted="up.render('#the-header', { response: event.response })"
+              >
+                {i18n.t('auth.form.submit')}
+              </a>
+              <a
+                class="text-sm font-light hover:underline hover:cursor-pointer"
+                href={route('auth.register')}
+                up-target=".container"
+                up-preload
+              >
+                {i18n.t('auth.register.page.link')}
+              </a>
+            </>
+          )}
           <div>
             <a
               class="text-sm font-light hover:underline hover:cursor-pointer"
@@ -62,7 +72,7 @@ export async function Header({ lang = 'en' }: HeaderProps) {
               up-target=".container"
               up-preload
             >
-              {i18n.t('base.menu.home') }
+              {i18n.t('base.menu.home')}
             </a>
           </div>
           <DonateLink lang={lang} />
