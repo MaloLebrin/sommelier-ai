@@ -20,10 +20,11 @@ router
   .group(() => {
     router.get('login', [LoginController, 'render']).as('auth.login')
     router.post('login', [LoginController])
-    router.delete('logout', [LogoutController]).as('auth.logout')
   })
   .middleware(middleware.guest())
   .prefix('/auth')
+
+router.post('/logout', [LogoutController]).as('auth.logout')
 
 router.get('/', [HomeController, 'render']).as('pages.home').use(middleware.auth())
 router.get('/about', [AboutController, 'render']).as('pages.about')
