@@ -46,9 +46,10 @@ export async function Header({ lang = 'en' }: HeaderProps) {
                 {i18n.t('auth.form.submit')}
               </a>
               <a
-                class="text-sm font-light hover:underline hover:cursor-pointer"
                 href={route('auth.register')}
+                class="text-sm font-light hover:underline hover:cursor-pointer"
                 up-target=".container"
+                up-accept-location={route('pages.home')}
                 up-preload
               >
                 {i18n.t('auth.register.page.link')}
