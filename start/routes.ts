@@ -22,8 +22,10 @@ router
     router.get('login', [LoginController, 'render']).as('auth.login')
     router.post('login', [LoginController])
 
-    router.get('register', [RegisterController, 'render']).as('auth.register')
-    router.post('register', [RegisterController])
+    router.group(() => {
+      router.get('register', [RegisterController, 'render']).as('auth.register')
+      router.post('register', [RegisterController, 'handle']).as('auth.register.post')
+    })
   })
   .middleware(middleware.guest())
   .prefix('/auth')

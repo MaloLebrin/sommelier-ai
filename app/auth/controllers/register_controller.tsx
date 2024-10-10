@@ -12,7 +12,7 @@ export default class RegisterController {
       firstName: vine.string().trim().minLength(2).maxLength(255),
       lastName: vine.string().trim().minLength(2).maxLength(255),
       email: vine.string().trim().email().maxLength(255),
-      password: vine.string().minLength(5).maxLength(255),
+      password: vine.string().trim().minLength(2),
     })
   )
 
