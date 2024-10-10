@@ -11,46 +11,45 @@ export function LoginForm({ lang = 'en' }: { lang: Lang }) {
   const i18n = i18nManager.locale(lang)
 
   return (
-      <form
-        class="no-scroll-bar relative h-full w-full sm:max-h-[350px] sm:max-w-[777px] bg-white bg-opacity-50 backdrop-blur rounded-3xl shadow-lg pt-4 px-6 pb-10 mt-14 overflow-y-hidden space-y-2"
-        action={route('auth.login')}
-        method="post"
-        style={{
-          ['--gap' as any]: space(3),
-        }}
-        up-main
-        up-target="main"
+    <form
+      class="no-scroll-bar relative h-full w-full sm:max-h-[350px] sm:max-w-[777px] bg-white bg-opacity-50 backdrop-blur rounded-3xl shadow-lg pt-4 px-6 pb-10 mt-14 overflow-y-hidden space-y-2"
+      action={route('auth.login')}
+      method="post"
+      style={{
+        ['--gap' as any]: space(3),
+      }}
+      up-main
+      up-target="main"
+    >
+      {flashMessages.has('error') && (
+        <p class="text-red-700">
+          {i18n.t('auth.form.errors.accountNotFound')}
+        </p>
+      )}
+
+      {csrfField()}
+
+      <Form.Group>
+        <Form.Label title={i18n.t('auth.form.email.label')} for="email" />
+        <Form.Input name="email" autocomplete="email" required />
+      </Form.Group>
+
+      <Form.Group>
+        <Form.Label title={i18n.t('auth.form.password.label')} for="password" />
+        <Form.Input name="password" type="password" autocomplete="current-password" required />
+      </Form.Group>
+      <div>
+        <Form.Checkbox name={'remember_me'}>
+          <span>{i18n.t('auth.form.rememberMe')}</span>
+        </Form.Checkbox>
+      </div>
+
+      <Button
+        type="submit"
+        lang={lang}
       >
-        {flashMessages.has('error') && (
-          <p class="text-red-700">
-            {i18n.t('login.form.errors.accountNotFound')}
-          </p>
-        )}
-
-        {csrfField()}
-
-        <Form.Group>
-          <Form.Label title="Email" for="email" />
-          <Form.Input name="email" autocomplete="email" required />
-        </Form.Group>
-
-        <Form.Group>
-          <Form.Label title="Mot de passe" for="password" />
-          <Form.Input name="password" type="password" autocomplete="current-password" required />
-        </Form.Group>
-
-        <div>
-          <Form.Checkbox name={'remember_me'}>
-            <span>{i18n.t('login.form.rememberMe')}</span>
-          </Form.Checkbox>
-        </div>
-
-        <Button
-          type="submit"
-          lang={lang}
-        >
-          {i18n.t('login.form.submit')}
-        </Button>
-      </form>
+        {i18n.t('auth.form.submit')}
+      </Button>
+    </form>
   )
 }

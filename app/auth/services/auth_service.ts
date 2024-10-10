@@ -24,4 +24,27 @@ export class AuthService {
 
     return user
   }
+
+  async register({
+    firstName,
+    lastName,
+    email,
+    password,
+  }: {
+    firstName: string
+    lastName: string
+    email: string
+    password: string
+  }) {
+    const user = new User()
+
+    user.firstName = firstName
+    user.lastName = lastName
+    user.email = email
+    user.password = await hash.use('scrypt').make(password)
+
+    await user.save()
+
+    return user
+  }
 }

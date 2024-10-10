@@ -81,10 +81,10 @@
   },
   "hotHook": {
     "boundaries": [
-      "./app/controllers/**/*.ts",
-      "./app/middleware/*.ts",
+      "./app/**/controllers/**/*.ts",
+      "./app/**/middleware/*.ts",
       "./app/ressources/views/**/*.tsx",
-      "./app/ressources/lang/**/*.ts"
+      "./app/ressources/lang/**/*.json"
     ]
   },
   "overrides": {
