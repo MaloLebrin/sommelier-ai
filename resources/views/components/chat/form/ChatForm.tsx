@@ -21,7 +21,7 @@ export function ChatForm({ placeholder, lang = 'en' }: ChatFormProps) {
           id="message"
           name="message"
           required
-          rows="8"
+          rows="1"
           spellcheck="true"
           class="w-full h-full px-6 py-4 bg-white border shadow-lg resize-none pr-14 bg-opacity-80 backdrop-blur rounded-3xl focus:outline-none focus:ring-2 focus:ring-opacity-50 disabled:cursor-not-allowed disabled:opacity-80"
           placeholder={placeholder || i18n.t('form.placeholder.textarea')}

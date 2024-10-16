@@ -1,10 +1,11 @@
+import Message from "#message/models/message";
 import type { PageProps } from "#types/index";
 import { ChatBox } from "#views/components/chat/Box";
 import { ChatForm } from "#views/components/chat/form/ChatForm";
 import { Layout } from "#views/components/layouts/Layout";
 
 interface HomeProps extends PageProps {
-  messages?: any[]
+  messages?: Message[]
 }
 
 export function Home({ lang = 'en', messages = [] }: HomeProps) {

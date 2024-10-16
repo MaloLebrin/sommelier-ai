@@ -8,7 +8,7 @@ interface ChatBoxProps {
   lang?: Lang;
   messageList: {
     content: string;
-    author: number
+    authorId: number
   }[]
 }
 
@@ -31,7 +31,7 @@ export function ChatBox({ messageList, lang ='en' }: ChatBoxProps) {
         messageList.map((message, index) => (
           <Message
             text={message.content}
-            isAuthorUser={Boolean(message.author)}
+            isAuthorUser={Boolean(message.authorId)}
             isFirst={index === 0}
           />
         ))
