@@ -36,10 +36,6 @@ export function ChatBox({ messageList, lang ='en' }: ChatBoxProps) {
           />
         ))
       )}
-              <Message
-          text="lore ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. Quisquam, quod.  "
-          isAuthorUser
-        />
       {isLoading && <LoadingMessage  />}
       <DonateMessage lang={lang} />
     </section>
