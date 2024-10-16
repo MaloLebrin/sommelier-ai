@@ -35,9 +35,10 @@ function Image(props: JSX.HtmlImageTag) {
     throw new Error('Missing src prop for <Image />')
   }
 
-  const url = vite.assetPath(props.src)
+  const { src, alt, class: className } = props
 
-  return createElement('img', { src: url, alt: props.alt || '', class: props.class })
+  const url = vite.assetPath(src)
+  return createElement('img', { src: url, alt: alt || '', class: className })
 }
 
 async function Entrypoint(props: { entrypoints: string[] }) {

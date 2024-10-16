@@ -17,27 +17,31 @@ export function ChatBox({ messageList, lang ='en' }: ChatBoxProps) {
   const isLoading = false;
 
   return (
-    <div
+    <section
       id="chatBox"
-      class="no-scroll-bar relative h-full w-full lg:min-h-[750px] sm:max-h-[750px] sm:max-w-[777px] bg-white bg-opacity-50 backdrop-blur rounded-3xl shadow-lg pt-4 px-6 overflow-y-hidden"
+      class="no-scroll-bar relative h-full mx-4 min-h-[600px] w-full lg:min-h-[750px] sm:max-h-[750px] sm:max-w-[777px] bg-white bg-opacity-50 backdrop-blur rounded-3xl shadow-lg pt-4 px-4 md:px-6 overflow-y-hidden space-y-2"
     >
       {!messageList || messageList?.length === 0 ? (
         <Message
           text={i18n?.t('base.message.defaultTextAI')}
-          author={0}
-          isFirst={false}
+          isFirst
         />
+
       ) : (
         messageList.map((message, index) => (
           <Message
             text={message.content}
-            author={message.author}
+            isAuthorUser={Boolean(message.author)}
             isFirst={index === 0}
           />
         ))
       )}
+              <Message
+          text="lore ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. Quisquam, quod.  "
+          isAuthorUser
+        />
       {isLoading && <LoadingMessage  />}
       <DonateMessage lang={lang} />
-    </div>
+    </section>
   );
 }

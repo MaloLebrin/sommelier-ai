@@ -23,7 +23,7 @@ export async function Header({ lang = 'en' }: HeaderProps) {
             🍇 Sommelier AI <span class="text-xs font-light">1.0</span>
           </p>
         </div>
-        <div class="flex items-center gap-6">
+        <div class="hidden md:flex items-center gap-6">
           {auth.user ? (
             <div class="d-flex items-center">
               <form action={`${route('auth.logout')}?_method=DELETE`} method="post">

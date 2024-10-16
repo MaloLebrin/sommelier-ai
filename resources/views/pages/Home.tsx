@@ -10,7 +10,7 @@ interface HomeProps extends PageProps {
 export function Home({ lang = 'en', messages = [] }: HomeProps) {
   return (
     <Layout title="🍇 Sommelier AI" lang={lang}>
-      <div class="container mx-auto flex flex-col items-center">
+      <div class="container mx-auto flex flex-col items-center px-2">
         <ChatBox messageList={messages} lang={lang} />
         <ChatForm lang={lang} />
       </div>

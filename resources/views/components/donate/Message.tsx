@@ -14,7 +14,7 @@ export function DonateMessage({ lang = 'en' }: MessageProps) {
       class="flex gap-3 mb-2"
     >
       <div
-        class="flex items-center w-auto gap-5 px-4 py-2 bg-white rounded-tl-sm rounded-2xl"
+        class="flex items-center w-auto gap-5 px-4 py-2 bg-white rounded-tl-sm rounded-2xl text-sm"
       >
         <p class="text-zinc-700">
           {i18n.t('base.donate.supportUS')}
