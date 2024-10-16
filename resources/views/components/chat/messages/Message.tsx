@@ -14,28 +14,30 @@ export function Message({
   isFirst = false,
   isLast = false,
 }: MessageProps) {
+  const isAuthorUser = author === 1
+  const isAuthorAI = author === 0
 
   return (
     <div
       class={cx([
         'flex flex-col w-full gap-3 mb-2',
-        !author ? 'justify-end items-start' : 'justify-start items-end',
+        isAuthorAI ? 'justify-end items-start' : 'justify-start items-end',
         isLast ? 'pb-4' : '',
       ])}
     >
-      {author === 0 && isFirst && <Author />}
-      {author === 1 && isFirst && <div class="mt-4" />}
+      {isAuthorAI && isFirst && <Author />}
+      {isAuthorUser && isFirst && <div class="mt-4" />}
 
       <div
         class={cx([
           'flex items-center gap-5 w-auto sm:max-w-[60%] max-w-[85%] rounded-2xl px-4 py-2',
-          author ? 'bg-white rounded-tl-sm' : 'bg-gray-50 rounded-br-sm',
+          isAuthorUser ? 'bg-white rounded-tl-sm' : 'bg-gray-50 rounded-br-sm',
         ])}
       >
         <p
           class={cx([
             'font-light',
-            author ? 'text-zinc-700' : 'text-gray-800',
+            isAuthorUser ? 'text-zinc-700' : 'text-gray-800',
           ])}
         >
           {text || 'Hello, I am Sommelier AI.'}

@@ -17,7 +17,7 @@ export function Layout({
   title = 'Sommelier AI',
   lang = 'en',
   description
- }: LayoutProps) {
+}: LayoutProps) {
   // FIXME assets
   const i18n = i18nManager.locale(lang)
 
@@ -28,7 +28,7 @@ export function Layout({
         <head>
           <meta charset="utf-8" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <meta name="description" content={description ||i18n.t('base.catchPhrase')} />
+          <meta name="description" content={description || i18n.t('base.catchPhrase')} />
           <link rel="preconnect" href="https://fonts.bunny.net" />
           <script src="https://cdn.tailwindcss.com"></script>
           {/* <link
@@ -57,17 +57,15 @@ export function Layout({
         </head>
 
         <body>
-          <body class="h-100 md:h-[100svh]">
+          <body
+            class="h-100 md:h-[100vh] bg-center bg-no-repeat bg-cover pt-2 space-y-2 md:space-y-4"
+            style="background-image: url('https://i.ebayimg.com/images/g/bm4AAOSwW89j1f-k/s-l1600.jpg')"
+          >
             <Header lang={lang} />
 
-            <main
-              class="h-full pt-8 px-2 bg-center bg-no-repeat bg-cover"
-              style="
-    background-image: url('https://i.ebayimg.com/images/g/bm4AAOSwW89j1f-k/s-l1600.jpg')"
-            >
+            <main>
               {children}
             </main>
-
             <Footer lang={lang} />
           </body>
         </body>

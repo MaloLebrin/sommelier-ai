@@ -16,7 +16,7 @@ export async function Header({ lang = 'en' }: HeaderProps) {
   await auth.check()
 
   return (
-    <header id="the-header" class="fixed w-full px-2 top-2">
+    <header id="the-header" class="w-full px-2">
       <div class="flex items-center justify-between w-full px-4 py-2 bg-white bg-opacity-50 backdrop-blur rounded-xl">
         <div>
           <p class="font-medium">
