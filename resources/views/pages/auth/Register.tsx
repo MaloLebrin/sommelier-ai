@@ -34,23 +34,25 @@ export function Register({ lang = 'en' }: RegisterProps) {
 
           {csrfField()}
 
-          <Form.Group>
+          <fieldset class="space-y-2">
             <Form.Label title={i18n.t('auth.form.firstname.label')} for="firstname" />
             <Form.Input name="firstname" autocomplete="firstname" required />
-          </Form.Group>
-          <Form.Group>
+          </fieldset>
+
+          <fieldset class="space-y-2">
             <Form.Label title={i18n.t('auth.form.lastname.label')} for="lastname" />
             <Form.Input name="lastname" autocomplete="lastname" required />
-          </Form.Group>
-          <Form.Group>
+          </fieldset>
+
+          <fieldset class="space-y-2">
             <Form.Label title={i18n.t('auth.form.email.label')} for="email" />
             <Form.Input name="email" autocomplete="email" required />
-          </Form.Group>
+          </fieldset>
 
-          <Form.Group>
+          <fieldset class="space-y-2">
             <Form.Label title={i18n.t('auth.form.password.label')} for="password" />
             <Form.Input name="password" type="password" autocomplete="current-password" required />
-          </Form.Group>
+          </fieldset>
 
           <Button
             type="submit"
